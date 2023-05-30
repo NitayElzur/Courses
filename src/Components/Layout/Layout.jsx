@@ -1,61 +1,48 @@
 import { useEffect, useState } from 'react';
 import './Layout.css'
 import { Outlet, Link } from 'react-router-dom';
-import MobileButton from './MobileButton/MobileButton';
+import MobileButton from '../MobileButton/MobileButton';
+import ContactUs from '../ContactUs/ContactUs';
 function Layout() {
-    const [width, setWidth] = useState(0);
-    const [isMobile, setIsMobile] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    useEffect(() => {
-        window.innerWidth < 769 ? setIsMobile(true) : setIsMobile(false)
-        window.addEventListener('resize', () => { setWidth(window.innerWidth) })
-    }, [isMobile, width])
-    useEffect(() => {
-        isMenuOpen ? console.log('open') : console.log('close')
-    }, [isMenuOpen])
     return (
         <div id='layoutMain'>
             <div id="layoutHeader">
                 <div id='layoutLogo'>
-
                 </div>
-                {isMobile ?
-                    <div id='mobileLinks'>
-                        <MobileButton isMenu={isMenuOpen} setMenu={setIsMenuOpen} />
-                    </div>
-                    :
-                    <div id="layoutLinks">
-                        <Link className='headerLink'>
-                            Home
-                        </Link>
-                        <Link className='headerLink'>
-                            Courses
-                        </Link>
-                        <Link className='headerLink'>
-                            Admin Page
-                        </Link>
-                    </div>
-                    
-                }
+                <div id='mobileLinks'>
+                    <MobileButton isMenu={isMenuOpen} setMenu={setIsMenuOpen} />
+                </div>
+                <div id="layoutLinks">
+                    <Link className='headerLink'>
+                        Home
+                    </Link>
+                    <Link className='headerLink'>
+                        Courses
+                    </Link>
+                    <Link className='headerLink'>
+                        Admin Page
+                    </Link>
+                </div>
             </div>
             {isMenuOpen &&
-                            <div id="divLinks">
-                                <Link className='headerLink'>
-                                    Home
-                                </Link>
-                                <Link className='headerLink'>
-                                    Courses
-                                </Link>
-                                <Link className='headerLink'>
-                                    Admin Page
-                                </Link>
-                            </div>
-                        }
+                <div id="divLinks">
+                    <Link className='headerLink'>
+                        Home
+                    </Link>
+                    <Link className='headerLink'>
+                        Courses
+                    </Link>
+                    <Link className='headerLink'>
+                        Admin Page
+                    </Link>
+                </div>
+            }
             <div id="layoutContent">
                 <Outlet />
                 <hr />
                 <div id="layoutFooter">
-                    <div id="footerContact"></div>
+                    <ContactUs />
                     <div id="footerLinks">
                         <div className="footerColumnLink">
                             <div className="dummyLink">Services</div>
