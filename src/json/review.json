@@ -1,0 +1,145 @@
+{
+    "graduates":[
+    {
+        "id": 1,
+        "img": "../photos/review photos/max.jfif",
+        "name": "Max",
+        "age": 23,
+        "education": "Full Stack Develpoment",
+        "review": "Great place to learn the basics of Web Development"
+    },
+    
+    {
+        "id": 2,
+        "img": "../photos/review photos/adam.jfif",
+        "name": "Adam",
+        "age": 22,
+        "education": "Software Development",
+        "review": "A professional course that taught me to build my own app from scratch"
+    },
+    {
+        "id": 3,
+        "img": "../photos/review photos/ben.jfif",
+        "name": "Ben",
+        "age": 21,
+        "education": "Full Stack Develpoment",
+        "review": "I improved my code and improved my desgining skills in a way i didnt excpected"
+    },
+    {
+        "id": 4,
+        "img": "../photos/review photos/veronica.jfif",
+        "name": "Veronica",
+        "age": 23,
+        "education": "Cyber Security Defense",
+        "review": "After that course i finally know how to protect my most important data"
+    },
+    {
+        "id": 5,
+        "img": "../photos/review photos/dan.jfif",
+        "name": "Dan",
+        "age": 25,
+        "education": "Gaming Development & Design",
+        "review": "Thanks to High Road i made my dream come true, and created my own game"
+    },
+    {
+        "id": 6,
+        "img": "../photos/review photos/josh.jfif",
+        "name": "Josh",
+        "age": 22,
+        "education": "Qa & Automation Development",
+        "review": "Great place, Professional teachers and amazing campus"
+    },
+    {
+        "id": 7,
+        "img": "../photos/review photos/claire.jfif",
+        "name": "Claire",
+        "age": 26,
+        "education": "Network System Management",
+        "review": "High Road as its name, took me to a higher road of success in the world of High Tech"
+    },
+    {
+        "id": 8,
+        "img": "../photos/review photos/michael.jfif",
+        "name": "Michael",
+        "age": 27,
+        "education": "Software Development",
+        "review": "A place that made Code more than a dots and numbers, it turned to my new passion"
+    },
+    {
+        "id": 9,
+        "img": "../photos/review photos/leonard.jfif",
+        "name": "Leonard",
+        "age": 21,
+        "education": "Network System Management",
+        "review": "After I finished ive seen how my knowledge is higher than other people at my job, the best choice i made"
+    },
+    {
+        "id": 10,
+        "img": "../photos/review photos/keith.jfif",
+        "name": "Keith",
+        "age": 23,
+        "education": "UX/UI Graphic Designing",
+        "review": "Finally i can use my creativity in the best way so the whole world could see"
+    }
+    ],
+    
+ "proffesors":[
+    {
+        "id": 1,
+        "img": "../photos/proffesors/yonatan.jfif",
+        "name": "Yonata Ben Ezra",
+        "practice": "Full Stack Development",
+        "qualification": "11 years of experience",
+        "work":"Google, Facebook, Founder of Apple corporation"
+    },
+
+    {
+        "id": 2,
+        "img": "../photos/proffesors/or.jfif",
+        "name": "Or Reuben",
+        "practice": "Software Development",
+        "qualification": "6 years of experience",
+        "work":"Microsoft, Waze"
+    },
+    {
+        "id": 3,
+        "img": "../photos/proffesors/yaron.jfif",
+        "name": "Yaron Levi",
+        "practice": "Cyber Security Defense",
+        "qualification": "9 years of experience",
+        "work":"CheckPoint, Nice"
+    },
+    {
+        "id": 4,
+        "img": "../photos/proffesors/alon.jfif",
+        "name": "Alon Hershko",
+        "practice": "UX/UI Graphic Designing",
+        "qualification": "5 years of experience",
+        "work":"Amazon, Facebook"
+    },
+    {
+        "id": 5,
+        "img": "../photos/proffesors/saar.jfif",
+        "name": "Saar Valensi",
+        "practice": "Gaming Development & Design",
+        "qualification": "6 years of experience",
+        "work":"Bethesda, Ubisoft, Activision"
+    },
+    {
+        "id": 6,
+        "img": "../photos/proffesors/hadar.jfif",
+        "name": "Hadar Messilati",
+        "practice": "Qa & Automation Development",
+        "qualification": "8 years of experience",
+        "work":"Microsoft, Amdocs"
+    },
+    {
+        "id": 7,
+        "img": "../photos/proffesors/ron.jfif",
+        "name": "Ron Greenberg",
+        "practice": "Network System Management",
+        "qualification": "9 years of experience",
+        "work":"Google cloud partner, wix"
+    }
+ ]
+    }
