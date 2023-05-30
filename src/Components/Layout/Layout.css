@@ -1,0 +1,106 @@
+#layoutMain {
+    height: 100%;
+    width: 100%;
+}
+
+#layoutHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#layoutContent {
+    position: absolute;
+    top: 15vh;
+    width: 100%;
+}
+
+#layoutLogo {
+    width: 200px;
+    height: 100%;
+    background-color: black;
+}
+
+#layoutLinks {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.headerLink {
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: relative;
+    transition: 0.5s;
+}
+
+.headerLink::after,
+.headerLink::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    width: 0;
+    background-color: black;
+    opacity: 0;
+    transition: all 0.5s;
+
+}
+
+.headerLink::after {
+    left: 50%;
+}
+
+.headerLink::before {
+    right: 50%;
+}
+
+.headerLink:hover::before,
+.headerLink:hover::after {
+    width: 60%;
+    opacity: 1;
+}
+
+.headerLink:hover {
+    transform: scale(1.2);
+}
+
+#mobileLinks {
+    width: 20%;
+}
+
+#divLinks {
+    position: fixed;
+    top: 15vh;
+    right: 0;
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+}
+
+.dummyLink {
+    font-weight: bold;
+}
+
+#footerLinks {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 3vh;
+}
+
+.footerColumnLink {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
