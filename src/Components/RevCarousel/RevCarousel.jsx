@@ -9,21 +9,24 @@ function RevCarousel() {
         setData(json.graduates)
     }, [json])
     return (
-        <Carousel id='revCarousellMain' rows={1} cols={2} gap={'10px'} loop autoplay={5000} containerStyle={{
-            width: '90vw',
-            height: '30vh',
-            zIndex: 0
-        }}>
-            {data &&
-                data.map((value, index) => {
-                    return (
-                        <Carousel.Item key={index}>
-                            <RevCard value={value} />
-                        </Carousel.Item>
-                    )
-                })
-            }
-        </Carousel>
+        <>
+            <div id='revCarouselBigText'>Student Reviews:</div>
+            <Carousel id='revCarousellMain' rows={1} cols={2} gap={'10px'} loop autoplay={5000} containerStyle={{
+                width: '90vw',
+                height: '30vh',
+                zIndex: 0
+            }}>
+                {data &&
+                    data.map((value, index) => {
+                        return (
+                            <Carousel.Item key={index}>
+                                <RevCard value={value} />
+                            </Carousel.Item>
+                        )
+                    })
+                }
+            </Carousel>
+        </>
     )
 }
 export default RevCarousel;
