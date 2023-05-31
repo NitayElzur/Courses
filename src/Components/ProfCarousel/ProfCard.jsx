@@ -6,11 +6,11 @@ function ProfCard({result}) {
     <>
       <div className="prof-container">
         <div id="prof-img-container">
-        <img id="prof-img" src={`${result?.img}`}/>
-        </div>
+        <img id="prof-img" src={`${result?.img}`}/></div>
         <br />
-        <div id="prof-info">
-          {`${result?.name}`} <br />
+       <div className="prof-info">  {`${result?.name}`}</div>
+        <br />
+        <div className="prof-info">
           {`${result?.practice}`}
           <br />
           {`${result?.qualification}`}
