@@ -9,16 +9,18 @@ function Layout() {
         <div id='layoutMain'>
             <div id="layoutHeader">
                 <div id='layoutLogo'>
-                    <img src="src\photos\high road_20230530205327.png" alt="" />
+                    <Link to={'/'}>
+                        <img src="src\photos\high road_20230530205327.png"/>
+                    </Link>
                 </div>
                 <div id='mobileLinks'>
                     <MobileButton isMenu={isMenuOpen} setMenu={setIsMenuOpen} />
                 </div>
                 <div id="layoutLinks">
-                    <Link className='headerLink'>
+                    <Link className='headerLink' to={'/'}>
                         Home
                     </Link>
-                    <Link className='headerLink'>
+                    <Link className='headerLink' to={'/courses'}>
                         Courses
                     </Link>
                     <Link className='headerLink'>
@@ -28,13 +30,13 @@ function Layout() {
             </div>
             {isMenuOpen &&
                 <div id="divLinks">
-                    <Link className='headerLink'>
+                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/'}>
                         Home
                     </Link>
-                    <Link className='headerLink'>
+                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/courses'}>
                         Courses
                     </Link>
-                    <Link className='headerLink'>
+                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}}>
                         Admin Page
                     </Link>
                 </div>

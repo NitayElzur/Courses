@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 768px) {
     #contactMain {
-        width: 90%;
-        height: 40vh;
+        width: 100%;
+        height: 35vh;
     }
 }
