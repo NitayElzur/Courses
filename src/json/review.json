@@ -2,7 +2,7 @@
     "graduates":[
     {
         "id": 1,
-        "img": "../photos/review photos/max.jfif",
+        "img": "src/photos/review photos/max.jfif",
         "name": "Max",
         "age": 23,
         "education": "Full Stack Develpoment",
@@ -11,7 +11,7 @@
     
     {
         "id": 2,
-        "img": "../photos/review photos/adam.jfif",
+        "img": "src/photos/review photos/adam.jfif",
         "name": "Adam",
         "age": 22,
         "education": "Software Development",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "img": "../photos/review photos/ben.jfif",
+        "img": "src/photos/review photos/ben.jfif",
         "name": "Ben",
         "age": 21,
         "education": "Full Stack Develpoment",
@@ -27,7 +27,7 @@
     },
     {
         "id": 4,
-        "img": "../photos/review photos/veronica.jfif",
+        "img": "src/photos/review photos/veronica.jfif",
         "name": "Veronica",
         "age": 23,
         "education": "Cyber Security Defense",
@@ -35,7 +35,7 @@
     },
     {
         "id": 5,
-        "img": "../photos/review photos/dan.jfif",
+        "img": "src/photos/review photos/dan.jfif",
         "name": "Dan",
         "age": 25,
         "education": "Gaming Development & Design",
@@ -43,7 +43,7 @@
     },
     {
         "id": 6,
-        "img": "../photos/review photos/josh.jfif",
+        "img": "src/photos/review photos/josh.jfif",
         "name": "Josh",
         "age": 22,
         "education": "Qa & Automation Development",
@@ -51,7 +51,7 @@
     },
     {
         "id": 7,
-        "img": "../photos/review photos/claire.jfif",
+        "img": "src/photos/review photos/claire.jfif",
         "name": "Claire",
         "age": 26,
         "education": "Network System Management",
@@ -59,7 +59,7 @@
     },
     {
         "id": 8,
-        "img": "../photos/review photos/michael.jfif",
+        "img": "src/photos/review photos/michael.jfif",
         "name": "Michael",
         "age": 27,
         "education": "Software Development",
@@ -67,7 +67,7 @@
     },
     {
         "id": 9,
-        "img": "../photos/review photos/leonard.jfif",
+        "img": "src/photos/review photos/leonard.jfif",
         "name": "Leonard",
         "age": 21,
         "education": "Network System Management",
@@ -75,7 +75,7 @@
     },
     {
         "id": 10,
-        "img": "../photos/review photos/keith.jfif",
+        "img": "src/photos/review photos/keith.jfif",
         "name": "Keith",
         "age": 23,
         "education": "UX/UI Graphic Designing",
