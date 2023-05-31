@@ -89,7 +89,7 @@
         "img": "../photos/proffesors/yonatan.jfif",
         "name": "Yonata Ben Ezra",
         "practice": "Full Stack Development",
-        "qualification": "11 years of experience",
+        "qualification": "14 years of experience",
         "work":"Google, Facebook, Founder of Apple corporation"
     },
 
@@ -98,39 +98,39 @@
         "img": "../photos/proffesors/or.jfif",
         "name": "Or Reuben",
         "practice": "Software Development",
-        "qualification": "6 years of experience",
-        "work":"Microsoft, Waze"
+        "qualification": "10 years of experience",
+        "work":"Microsoft, Sap, waze"
     },
     {
         "id": 3,
         "img": "../photos/proffesors/yaron.jfif",
         "name": "Yaron Levi",
         "practice": "Cyber Security Defense",
-        "qualification": "9 years of experience",
-        "work":"CheckPoint, Nice"
+        "qualification": "20 years of experience",
+        "work":"CheckPoint, SentinelOne"
     },
     {
         "id": 4,
         "img": "../photos/proffesors/alon.jfif",
         "name": "Alon Hershko",
         "practice": "UX/UI Graphic Designing",
-        "qualification": "5 years of experience",
-        "work":"Amazon, Facebook"
+        "qualification": "15 years of experience",
+        "work":"Amazon, Ebay"
     },
     {
         "id": 5,
         "img": "../photos/proffesors/saar.jfif",
         "name": "Saar Valensi",
         "practice": "Gaming Development & Design",
-        "qualification": "6 years of experience",
-        "work":"Bethesda, Ubisoft, Activision"
+        "qualification": "8 years of experience",
+        "work":"SciPlay, Ubisoft-FR"
     },
     {
         "id": 6,
         "img": "../photos/proffesors/hadar.jfif",
         "name": "Hadar Messilati",
         "practice": "Qa & Automation Development",
-        "qualification": "8 years of experience",
+        "qualification": "7 years of experience",
         "work":"Microsoft, Amdocs"
     },
     {
@@ -138,8 +138,8 @@
         "img": "../photos/proffesors/ron.jfif",
         "name": "Ron Greenberg",
         "practice": "Network System Management",
-        "qualification": "9 years of experience",
-        "work":"Google cloud partner, wix"
+        "qualification": "12 years of experience",
+        "work":"Google cloud partner, Palo Alto Networks"
     }
  ]
     }
