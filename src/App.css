@@ -14,7 +14,10 @@ html, body, #root{
 
 :root {
     font-size: 20px;
-    --grey: rgb(231, 231, 231);
+    --grey: #a2a7c4;
+    --blue: #394bae;
+    --purple: #7e59dd;
+
 }
 
 a {

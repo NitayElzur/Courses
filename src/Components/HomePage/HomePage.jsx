@@ -4,7 +4,9 @@ import ProfCarousel from '../ProfCarousel/ProfCarousel'
 function HomePage() {
     return (
         <div id='homeMain'>
-            <img id='homeImg' src="https://mobidev.biz/wp-content/uploads/2022/06/banner.png"/>
+            <div id="homeBanner">
+                <span>Ignite Your Passion for Technology through Expert Training</span>
+            </div>
             <ProfCarousel />
             <RevCarousel />
         </div>
