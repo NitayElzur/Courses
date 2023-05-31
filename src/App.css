@@ -14,11 +14,18 @@ html, body, #root{
 
 :root {
     font-size: 20px;
+    --grey: rgb(207, 207, 207);
 }
 
 a {
     color: black;
     text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 768px) {
