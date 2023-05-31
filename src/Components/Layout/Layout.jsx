@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import './Layout.css'
+import { useEffect, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import MobileButton from '../MobileButton/MobileButton';
 import ContactUs from '../ContactUs/ContactUs';
@@ -9,6 +9,7 @@ function Layout() {
         <div id='layoutMain'>
             <div id="layoutHeader">
                 <div id='layoutLogo'>
+                    <img src="src\photos\high road_20230530205327.png" alt="" />
                 </div>
                 <div id='mobileLinks'>
                     <MobileButton isMenu={isMenuOpen} setMenu={setIsMenuOpen} />
