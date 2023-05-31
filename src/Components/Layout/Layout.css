@@ -119,6 +119,7 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--grey);
+    padding: 5vh;
 }
 
 #footerContact {

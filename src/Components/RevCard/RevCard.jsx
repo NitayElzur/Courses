@@ -6,6 +6,7 @@ function RevCard({ value }) {
                 <img id='revCardImg' src={value.img} alt="" />
                 <div className="bigText">{`${value.name}, ${value.age}`}</div>
             </div>
+            <hr id='revCarHr' />
             <div id="revCardQuote">
                 <div>
                     {`Course: ${value.education}`}
