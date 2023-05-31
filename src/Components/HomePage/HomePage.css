@@ -4,4 +4,9 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--grey);
+    padding-bottom: 5vh;
+}
+
+#homeImg {
+    width: 100%;
 }
