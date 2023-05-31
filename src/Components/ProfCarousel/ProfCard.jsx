@@ -11,11 +11,11 @@ function ProfCard({result}) {
        <div className="prof-info">  {`${result?.name}`}</div>
         <br />
         <div className="prof-info">
-          {`${result?.practice}`}
+          {`${result?.practice}`}.
           <br />
-          {`${result?.qualification}`}
+          {`${result?.qualification}`}.
           <br />
-         Earlier work: {`${result?.work}`}
+         Working Experience: {`${result?.work}`}
           <br />
         </div>
       </div>
