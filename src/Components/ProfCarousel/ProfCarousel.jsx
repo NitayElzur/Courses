@@ -23,7 +23,7 @@ function ProfCarousel() {
           rows={1}
           gap={100}
           loop
-          mobileBreakpoint={970}
+          mobileBreakpoint={960}
           containerStyle={{
             zIndex: 0,
             width: '90%'
