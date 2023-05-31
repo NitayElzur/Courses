@@ -1,9 +1,23 @@
+
 #carousel-container {
    display: flex;
    justify-content: center;
-    width: 100%;
+    width: 98vw;
     height: 100%;
     margin-top: 10vh ;
     margin-bottom: 10vh ;
-    
+    overflow: hidden;
   }
+
+  #prof-header{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+    text-decoration: underline ;
+  }
+  .Carousel__Container-sc-hyhecw-0 fPimMH{
+    z-index: 0;
+    width: 80%;
+  }
+
+  

@@ -3,22 +3,23 @@ import json from "../../json/review.json";
 import "./ProfCard.css"
 function ProfCard({result}) {
   return (
-    <div className="prof-container">
-      <div className="prof-scondery-container">
+    <>
+      <div className="prof-container">
         <div id="prof-img-container">
         <img id="prof-img" src={`${result?.img}`}/>
         </div>
+        <br />
         <div id="prof-info">
           {`${result?.name}`} <br />
           {`${result?.practice}`}
           <br />
           {`${result?.qualification}`}
           <br />
-         Earlier working places: {`${result?.work}`}
+         Earlier work: {`${result?.work}`}
           <br />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
