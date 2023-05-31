@@ -86,16 +86,16 @@
  "proffesors":[
     {
         "id": 1,
-        "img": "../photos/proffesors/yonatan.jfif",
+        "img": "src/photos/proffesors/yonatan.jpg",
         "name": "Yonata Ben Ezra",
         "practice": "Full Stack Development",
         "qualification": "14 years of experience",
-        "work":"Google, Facebook, Founder of Apple corporation"
+        "work":"Google, Facebook"
     },
 
     {
         "id": 2,
-        "img": "../photos/proffesors/or.jfif",
+        "img": "src/photos/proffesors/or.jfif",
         "name": "Or Reuben",
         "practice": "Software Development",
         "qualification": "10 years of experience",
@@ -103,7 +103,7 @@
     },
     {
         "id": 3,
-        "img": "../photos/proffesors/yaron.jfif",
+        "img": "src/photos/proffesors/yaron.jfif",
         "name": "Yaron Levi",
         "practice": "Cyber Security Defense",
         "qualification": "20 years of experience",
@@ -111,7 +111,7 @@
     },
     {
         "id": 4,
-        "img": "../photos/proffesors/alon.jfif",
+        "img": "src/photos/proffesors/alon.jfif",
         "name": "Alon Hershko",
         "practice": "UX/UI Graphic Designing",
         "qualification": "15 years of experience",
@@ -119,7 +119,7 @@
     },
     {
         "id": 5,
-        "img": "../photos/proffesors/saar.jfif",
+        "img": "src/photos/proffesors/saar.jfif",
         "name": "Saar Valensi",
         "practice": "Gaming Development & Design",
         "qualification": "8 years of experience",
@@ -127,7 +127,7 @@
     },
     {
         "id": 6,
-        "img": "../photos/proffesors/hadar.jfif",
+        "img": "src/photos/proffesors/hadar.jfif",
         "name": "Hadar Messilati",
         "practice": "Qa & Automation Development",
         "qualification": "7 years of experience",
@@ -135,7 +135,7 @@
     },
     {
         "id": 7,
-        "img": "../photos/proffesors/ron.jfif",
+        "img": "src/photos/proffesors/ron.jfif",
         "name": "Ron Greenberg",
         "practice": "Network System Management",
         "qualification": "12 years of experience",
