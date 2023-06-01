@@ -15,6 +15,10 @@
     font-size: 1rem;
     font-weight: normal;
   }
-
+  #slider-container{
+    justify-content: center;
+    height: 20vh;
+    width: 100vw;
+  }
 
   
