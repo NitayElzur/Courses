@@ -1,6 +1,7 @@
 import "./ProfCarousel.css";
 import React from "react";
-import Carousel from "better-react-carousel";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import json from "../../json/review.json";
 import { useState, useEffect } from "react";
 import ProfCard from "./profCard";
@@ -19,24 +20,17 @@ function ProfCarousel() {
         <h1>Our Proffesors:</h1>
       </div>
       <div id="carousel-container">
-        <Carousel
-          cols={2}
-          rows={1}
-          gap={100}
-          loop
-          containerStyle={{
-            zIndex: 0,
-            width: '90%'
-          }}
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={125}
+        totalSlides={7}
         >
-          {detail &&
-            detail.map((value, index) => (
-              <Carousel.Item key={index}>
-                <ProfCard result={value} />
-              </Carousel.Item>
-            ))}
-        </Carousel>
-        <ProductPage/>
+        <Slider id="slider-container">
+          <Slide index={0}>I am the first Slide.</Slide>
+          <Slide index={1}>I am the second Slide.</Slide>
+          <Slide index={2}>I am the third Slide.</Slide>
+        </Slider>
+      </CarouselProvider>
       </div>
     </div>
   );
