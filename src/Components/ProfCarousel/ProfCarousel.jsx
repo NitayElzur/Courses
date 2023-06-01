@@ -4,7 +4,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import json from "../../json/review.json";
 import { useState, useEffect } from "react";
-import ProfCard from "./profCard";
+import ProfCard from "./ProfCard";
 import "./ProfCarousel.css";
 import ProductPage from "../ProductPage/ProductPage.jsx"
 
