@@ -10,7 +10,7 @@ function Layout() {
             <div id="layoutHeader">
                 <div id='layoutLogo'>
                     <Link to={'/'}>
-                        <img src="./src/photos/high road_20230530205327.png"/>
+                        <img src="https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621615/High-Road/high_road_20230530205327_mjtd2m.png"/>
                     </Link>
                 </div>
                 <div id='mobileLinks'>
