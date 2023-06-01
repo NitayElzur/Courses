@@ -2,7 +2,7 @@
     "graduates":[
     {
         "id": 1,
-        "img": "src/photos/review photos/max.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/max_u3qm60.jpg",
         "name": "Max",
         "age": 23,
         "education": "Full Stack Develpoment",
@@ -11,7 +11,7 @@
     
     {
         "id": 2,
-        "img": "src/photos/review photos/adam.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/adam_foguw7.jpg",
         "name": "Adam",
         "age": 22,
         "education": "Software Development",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "img": "src/photos/review photos/ben.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/ben_drzq3j.jpg",
         "name": "Ben",
         "age": 21,
         "education": "Full Stack Develpoment",
@@ -27,7 +27,7 @@
     },
     {
         "id": 4,
-        "img": "src/photos/review photos/veronica.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/veronica_dzzlle.jpg",
         "name": "Veronica",
         "age": 23,
         "education": "Cyber Security Defense",
@@ -35,7 +35,7 @@
     },
     {
         "id": 5,
-        "img": "src/photos/review photos/dan.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621791/High-Road/Reviews/dan_d7uxmj.jpg",
         "name": "Dan",
         "age": 25,
         "education": "Gaming Development & Design",
@@ -43,7 +43,7 @@
     },
     {
         "id": 6,
-        "img": "src/photos/review photos/josh.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621791/High-Road/Reviews/josh_pkbmqu.jpg",
         "name": "Josh",
         "age": 22,
         "education": "Qa & Automation Development",
@@ -51,7 +51,7 @@
     },
     {
         "id": 7,
-        "img": "src/photos/review photos/claire.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/claire_qwmnqk.jpg",
         "name": "Claire",
         "age": 26,
         "education": "Network System Management",
@@ -59,7 +59,7 @@
     },
     {
         "id": 8,
-        "img": "src/photos/review photos/michael.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/michael_tgomru.jpg",
         "name": "Michael",
         "age": 27,
         "education": "Software Development",
@@ -67,7 +67,7 @@
     },
     {
         "id": 9,
-        "img": "src/photos/review photos/leonard.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/leonard_f4uriu.jpg",
         "name": "Leonard",
         "age": 21,
         "education": "Network System Management",
@@ -75,7 +75,7 @@
     },
     {
         "id": 10,
-        "img": "src/photos/review photos/keith.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621792/High-Road/Reviews/keith_apnlye.jpg",
         "name": "Keith",
         "age": 23,
         "education": "UX/UI Graphic Designing",
@@ -86,7 +86,7 @@
  "proffesors":[
     {
         "id": 1,
-        "img": "src/photos/proffesors/yonatan.jpg",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621759/High-Road/Proffesorrs/yonatan_uy8nks.jpg",
         "name": "Yonata Ben Ezra",
         "practice": "Full Stack Development",
         "qualification": "14 years of experience",
@@ -95,7 +95,7 @@
 
     {
         "id": 2,
-        "img": "src/photos/proffesors/or.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621759/High-Road/Proffesorrs/or_mqivck.jpg",
         "name": "Or Reuben",
         "practice": "Software Development",
         "qualification": "10 years of experience",
@@ -103,7 +103,7 @@
     },
     {
         "id": 3,
-        "img": "src/photos/proffesors/yaron.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621758/High-Road/Proffesorrs/yaron_mad34b.jpg",
         "name": "Yaron Levi",
         "practice": "Cyber Security Defense",
         "qualification": "20 years of experience",
@@ -111,7 +111,7 @@
     },
     {
         "id": 4,
-        "img": "src/photos/proffesors/alon.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621759/High-Road/Proffesorrs/alon_hlom5j.jpg",
         "name": "Alon Hershko",
         "practice": "UX/UI Graphic Designing",
         "qualification": "15 years of experience",
@@ -119,7 +119,7 @@
     },
     {
         "id": 5,
-        "img": "src/photos/proffesors/saar.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621759/High-Road/Proffesorrs/saar_daauno.webp",
         "name": "Saar Valensi",
         "practice": "Gaming Development & Design",
         "qualification": "8 years of experience",
@@ -127,7 +127,7 @@
     },
     {
         "id": 6,
-        "img": "src/photos/proffesors/hadar.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621759/High-Road/Proffesorrs/hadar_uphcmk.jpg",
         "name": "Hadar Messilati",
         "practice": "Qa & Automation Development",
         "qualification": "7 years of experience",
@@ -135,7 +135,7 @@
     },
     {
         "id": 7,
-        "img": "src/photos/proffesors/ron.jfif",
+        "img": "https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621759/High-Road/Proffesorrs/ron_qmrftv.jpg",
         "name": "Ron Greenberg",
         "practice": "Network System Management",
         "qualification": "12 years of experience",
