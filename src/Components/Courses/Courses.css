@@ -1,0 +1,32 @@
+#course-list-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+#icon-course-container{
+display: flex;
+justify-content: space-around;
+align-items: center;
+gap: 5vw;
+}
+
+.icon-img{
+    width: 64px;
+    height: 64px;
+}
+.icon-header{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 660px){
+    #icon-course-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
