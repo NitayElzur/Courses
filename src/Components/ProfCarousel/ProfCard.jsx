@@ -1,5 +1,4 @@
 import React from "react";
-import json from "../../json/review.json";
 import "./ProfCard.css"
 function ProfCard({result}) {
   return (

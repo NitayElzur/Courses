@@ -5,6 +5,7 @@ import json from "../../json/review.json";
 import { useState, useEffect } from "react";
 import ProfCard from "./profCard";
 import "./ProfCarousel.css";
+import ProductPage from "../ProductPage/ProductPage.jsx"
 
 function ProfCarousel() {
   const [detail, setdetail] = useState([]);
@@ -23,7 +24,6 @@ function ProfCarousel() {
           rows={1}
           gap={100}
           loop
-          mobileBreakpoint={900}
           containerStyle={{
             zIndex: 0,
             width: '90%'
@@ -36,6 +36,7 @@ function ProfCarousel() {
               </Carousel.Item>
             ))}
         </Carousel>
+        <ProductPage/>
       </div>
     </div>
   );
