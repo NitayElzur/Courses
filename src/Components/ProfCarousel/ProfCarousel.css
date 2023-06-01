@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2vh;
+    margin-bottom: 2vh;
     font-size: 1rem;
     font-weight: normal;
   }
