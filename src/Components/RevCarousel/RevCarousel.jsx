@@ -2,6 +2,7 @@ import './RevCarousel.css'
 import json from '../../json/review.json'
 import { useEffect, useState } from 'react';
 import RevCard from '../RevCard/RevCard';
+import ReactImageGallery from 'react-image-gallery';
 function RevCarousel() {
     const [data, setData] = useState([]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -14,7 +15,7 @@ function RevCarousel() {
     return (
         <>
             <div id='revCarouselBigText'>Student Reviews:</div>
-        
+            <ReactImageGallery/>
         </>
     )
 }
