@@ -2,7 +2,7 @@ import "./ProfCarousel.css";
 import React from "react";
 import json from "../../json/review.json";
 import { useState, useEffect } from "react";
-import ProfCard from "./profCard";
+import ProfCard from "./ProfCard";
 import "./ProfCarousel.css";
 function ProfCarousel() {
   const [detail, setdetail] = useState([]);
