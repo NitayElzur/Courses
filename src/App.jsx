@@ -7,7 +7,7 @@ import ProductPage from './Components/ProductPage/ProductPage';
 import json from './json/review.json'
 import { useContext, useEffect, useState } from 'react';
 import { MainContext } from './Contexts/MainContext';
-import Admin from './Components/Admin/Admin';
+import AdminLogin from './Components/AdminLogin/AdminLogin';
 function App() {
   const [data, setData] = useState(useContext(MainContext))
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
             <Route path='courses' element={<Courses />} />
             <Route path='ProductPage' element={<ProductPage />} />
             <Route path='ProductPage/:id' element={<ProductPage />} />
-            <Route path='admin' element={<Admin/>}/>
+            <Route path='admin' element={<AdminLogin/>}/>
           </Route>
         </Routes>
       </MainContext.Provider>
