@@ -12,8 +12,8 @@ function Calendar() {
             plugins={[dayGridPlugin]}
             initialView="dayGridMonth"
             eventClick={(e) => console.log(e)}
-            events={...events}
-            aspectRatio={window.innerHeight * 2 / window.innerWidth}
+            events={events}
+            aspectRatio={1}
         />
     )
 }
