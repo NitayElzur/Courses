@@ -10,6 +10,7 @@ function ProductPage() {
  useEffect(() => {
   setData(json.product.find(value => value.id == id));
 }, [json, id]);
+
   return (
     <div id="course-container">
       <div id="top-course-container">
