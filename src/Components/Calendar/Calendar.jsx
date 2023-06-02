@@ -10,6 +10,8 @@ function Calendar() {
     const [events, setEvents] = useState([
         { title: 'FullStack Course - yonatan ben ezra', start: '2023-06-01', end: '2023-08-03', color: 'green' },
         { title: 'DevOps Course', start: '2023-07-02', end: '2023-08-01' },
+        { title: 'DevOps Course', start: '2023-07-02', end: '2023-08-01' },
+        { title: 'DevOps Course', start: '2023-07-02', end: '2023-08-01' },
     ])
     return (
         <FullCalendar
