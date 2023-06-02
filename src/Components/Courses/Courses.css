@@ -14,6 +14,8 @@
 #courseCalendar {
     width: 90%;
     z-index: 0;
+    background-color: white;
+    border-radius: 10px;
 }
 
 #course-list-container{
