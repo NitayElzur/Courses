@@ -5,9 +5,14 @@
     align-items: center;
 }
 
-#courseText {
+.courseText {
     font-size: 2rem;
     font-weight: bold;
+}
+
+#courseCalendar {
+    width: 90%;
+    z-index: 0;
 }
 
 #course-list-container{
