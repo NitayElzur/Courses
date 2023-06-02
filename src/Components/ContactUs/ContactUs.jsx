@@ -24,7 +24,7 @@ function ContactUs() {
                         message: 'Email must contain text before and after a @'
                     } })
                 } />
-                <input id='contactFormButton' type="submit" />
+                <button type='sumbit' id='contactFormButton'>Submit</button>
             </form >
         </div >
     )
