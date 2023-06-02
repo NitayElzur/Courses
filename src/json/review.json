@@ -248,5 +248,17 @@
         "proffesor": "Ron Greenberg",
         "proffesor-education": "12 years of experience"
     }
+],
+"admin": [
+    {
+        "id": 1,
+        "username": "nitay",
+        "password": "123456"
+    },
+    {
+        "id": 2,
+        "username": "shahar",
+        "password": "456789"
+    }
 ]
     }
