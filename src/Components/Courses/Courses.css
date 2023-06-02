@@ -1,3 +1,15 @@
+#courseMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#courseText {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 #course-list-container{
     display: flex;
     justify-content: center;
