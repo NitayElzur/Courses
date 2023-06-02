@@ -15,7 +15,7 @@ function Courses() {
         <div id="courseMain">
             <div className="courseText">Our Upcoming Courses:</div>
             <div id="courseCalendar">
-                <Calendar />
+                <Calendar data={product} setData={setProduct}/>
             </div>
             <div className="courseText">Our Courses:</div>
             <div id='course-list-container'>

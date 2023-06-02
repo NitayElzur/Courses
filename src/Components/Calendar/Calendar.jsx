@@ -2,17 +2,23 @@ import './Calendar.css'
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { useEffect, useState } from "react";
-function Calendar() {
+function Calendar({ data, setData }) {
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {
         window.addEventListener('resize', () => setWidth(window.innerWidth))
-    }, [])
-    const [events, setEvents] = useState([
-        { title: 'FullStack Course - yonatan ben ezra', start: '2023-06-01', end: '2023-08-03', color: 'green' },
-        { title: 'DevOps Course', start: '2023-07-02', end: '2023-08-01' },
-        { title: 'DevOps Course', start: '2023-07-02', end: '2023-08-01' },
-        { title: 'DevOps Course', start: '2023-07-02', end: '2023-08-01' },
-    ])
+        const tempArr = [];
+        data.map(value => {
+            const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            tempArr.push({
+                title: `${value.course} - ${value.proffesor}`,
+                start: value['start-date'],
+                end: value['end-date'],
+                color: `#${randomColor}`
+            })
+        })
+        setEvents(tempArr)
+    }, [data])
+    const [events, setEvents] = useState([]);
     return (
         <FullCalendar
             plugins={[dayGridPlugin]}
