@@ -7,6 +7,7 @@ import ProductPage from './Components/ProductPage/ProductPage';
 import json from './json/review.json'
 import { useContext, useEffect, useState } from 'react';
 import { MainContext } from './Contexts/MainContext';
+import ScrollToTop from './Components/ScrollToTop';
 function App() {
   const [data, setData] = useState(useContext(MainContext))
   useEffect(() => {
