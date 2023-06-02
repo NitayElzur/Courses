@@ -14,6 +14,7 @@ function Calendar() {
             eventClick={(e) => console.log(e)}
             events={events}
             aspectRatio={1}
+            contentHeight={window.innerWidth}
         />
     )
 }
