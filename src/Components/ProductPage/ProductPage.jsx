@@ -27,12 +27,12 @@ function ProductPage() {
         {data?.paragrath3}<br /><br /><br />
         </div>
         <div id="course-info">
-    Languages used in course: {data?.languages} <br />
-    Course length: {data?.length} <br /><br />
-        </div>
+   <p className="course-details">Languages:</p>{data?.languages} <br /><br />
+   <p className="course-details">Course length:</p>{data?.length} <br /><br />
+        </div><br />
         <div id="course-prof-container">
-          <img id="prof-course-img" src={data?.proffesorImg}/><br />
-        Course Proffesor:  {data?.proffesor}
+       <p id="course-prof-name">Course Proffesor: {data?.proffesor}</p>  <br />
+         <br /> <img id="prof-course-img" src={data?.proffesorImg}/><br />
         </div>
       </div>
     </div>
