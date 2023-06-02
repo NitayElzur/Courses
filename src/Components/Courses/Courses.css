@@ -46,4 +46,8 @@ gap: 5vw;
         align-items: center;
         flex-wrap: wrap;
     }
+
+    #courseMain {
+        padding: 0;
+    }
 }
