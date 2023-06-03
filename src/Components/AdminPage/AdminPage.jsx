@@ -7,9 +7,9 @@ function AdminPage({ isAdmin}) {
         navigate(!isAdmin && '/login')
     }, [])
     return (
-        <>
-
-        </>
+        <div id="adminMain">
+            
+        </div>
     )
 }
 export default AdminPage;
