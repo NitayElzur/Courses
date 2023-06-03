@@ -19,19 +19,19 @@ function App() {
   }, [json])
   return (
     <>
-      <MainContext.Provider value={{data, setData}}>
+      <MainContext.Provider value={{ data, setData }}>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path='courses' element={<Courses />} />
             <Route path='ProductPage' element={<ProductPage />} />
             <Route path='ProductPage/:id' element={<ProductPage />} />
-            <Route path='login' element={<AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>}/>
-            <Route path='admin' element={<AdminPage isAdmin={isAdmin}/>}/>
-            <Route path='Payment' element={<Payment/>}/>
-          <Route path='Payment/:id' element={<Payment/>}/>
-        </Route>
-          <Route path='*' element={<NoMatch />}/>
+            <Route path='login' element={<AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
+            <Route path='admin' element={<AdminPage isAdmin={isAdmin} />} />
+            <Route path='Payment' element={<Payment />} />
+            <Route path='Payment/:id' element={<Payment />} />
+          </Route>
+          <Route path='*' element={<NoMatch />} />
         </Routes>
       </MainContext.Provider>
     </>
