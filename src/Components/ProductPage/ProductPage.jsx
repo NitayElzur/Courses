@@ -3,6 +3,10 @@ import "./ProductPage.css";
 import json from "../../json/review.json";
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import {Link } from 'react-router-dom';
+import { Button } from "@mui/base";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 
 function ProductPage() {
     let { id } = useParams();
@@ -10,6 +14,7 @@ function ProductPage() {
  useEffect(() => {
   setData(json.product.find(value => value.id == id));
 }, [json, id]);
+
   return (
     <div id="course-container">
       <div id="top-course-container">
@@ -26,14 +31,17 @@ function ProductPage() {
         {data?.paragrath3}<br /><br /><br />
         </div>
         <div id="course-info">
-    Languages used in course: {data?.languages} <br />
-    Course length: {data?.length} <br /><br />
-        </div>
+   <p className="course-details">Languages:</p>{data?.languages} <br /><br />
+   <p className="course-details">Course length:</p>{data?.length} <br /><br />
+        </div><br />
         <div id="course-prof-container">
-          <img id="prof-course-img" src={data?.proffesorImg}/><br />
-        Course Proffesor:  {data?.proffesor}
+       <p id="course-prof-name">Course Proffesor: {data?.proffesor}</p>  <br />
+         <br /> <img id="prof-course-img" src={data?.proffesorImg}/><br />
         </div>
       </div>
+      <Button id="payment-link">
+     <Link to={`/Payment/${id}`}> <p id="click-checkout">Click to checkout<AddShoppingCartIcon/></p></Link>
+     </Button>
     </div>
   );}
 export default ProductPage;

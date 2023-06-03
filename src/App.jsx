@@ -9,6 +9,8 @@ import { useContext, useEffect, useState } from 'react';
 import { MainContext } from './Contexts/MainContext';
 import AdminLogin from './Components/AdminLogin/AdminLogin';
 import AdminPage from './Components/AdminPage/AdminPage';
+import Payment from './Components/Payment/Payment';
+import NoMatch from './Components/NoMatch/NoMatch';
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const [data, setData] = useState(useContext(MainContext))
@@ -17,16 +19,19 @@ function App() {
   }, [json])
   return (
     <>
-      <MainContext.Provider value={{data, setData}}>
+      <MainContext.Provider value={{ data, setData }}>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path='courses' element={<Courses />} />
             <Route path='ProductPage' element={<ProductPage />} />
             <Route path='ProductPage/:id' element={<ProductPage />} />
-            <Route path='login' element={<AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>}/>
-            <Route path='admin' element={<AdminPage isAdmin={isAdmin}/>}/>
+            <Route path='login' element={<AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
+            <Route path='admin' element={<AdminPage isAdmin={isAdmin} />} />
+            <Route path='Payment' element={<Payment />} />
+            <Route path='Payment/:id' element={<Payment />} />
           </Route>
+          <Route path='*' element={<NoMatch />} />
         </Routes>
       </MainContext.Provider>
     </>
