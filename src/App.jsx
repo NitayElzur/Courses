@@ -27,7 +27,7 @@ function App() {
             <Route path='ProductPage/:id' element={<ProductPage />} />
             <Route path='login' element={<AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>}/>
             <Route path='admin' element={<AdminPage isAdmin={isAdmin}/>}/>
-            <Route path='*'element={<NoMatch />}/>
+            <Route path='*' element={<NoMatch />}/>
         </Route>
         </Routes>
       </MainContext.Provider>

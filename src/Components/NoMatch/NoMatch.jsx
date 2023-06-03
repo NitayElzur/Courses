@@ -7,11 +7,11 @@ function NoMatch(){
 return(
 <>
 <div>
-    <div>
+    <div id="error-header">
         <p>Error 404</p>
         <p>Sorry, page not found</p>
     </div>
-    <div>
+    <div id="link-back-home">
         <Link to="/">Back to Hompe page</Link>
     </div>
 </div>

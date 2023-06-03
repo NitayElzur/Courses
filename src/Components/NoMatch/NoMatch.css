@@ -1,0 +1,12 @@
+#error-header{
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+    font-size: x-large;
+}
+#link-back-home{
+    display: flex;
+    justify-content: center;
+    align-items:last baseline;
+    font-size: larger;
+}
