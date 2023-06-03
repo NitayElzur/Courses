@@ -1,0 +1,30 @@
+#courseItemForm {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#courseFormButton {
+    height: 5vh;
+    width: 10vw;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#courseInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.courseInput {
+    width: 100%;
+}
+
+#courseLanguages {
+    width: 75%;
+}
+
+.pictureInput {
+    width: 60%;
+}
