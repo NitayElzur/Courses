@@ -9,6 +9,7 @@ import { useContext, useEffect, useState } from 'react';
 import { MainContext } from './Contexts/MainContext';
 import AdminLogin from './Components/AdminLogin/AdminLogin';
 import AdminPage from './Components/AdminPage/AdminPage';
+import NoMatch from './Components/NoMatch/NoMatch';
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const [data, setData] = useState(useContext(MainContext))
@@ -26,7 +27,8 @@ function App() {
             <Route path='ProductPage/:id' element={<ProductPage />} />
             <Route path='login' element={<AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>}/>
             <Route path='admin' element={<AdminPage isAdmin={isAdmin}/>}/>
-          </Route>
+            <Route path='*'element={<NoMatch />}/>
+        </Route>
         </Routes>
       </MainContext.Provider>
     </>
