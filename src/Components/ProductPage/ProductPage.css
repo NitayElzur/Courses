@@ -71,3 +71,23 @@ font-weight: 600;
     text-decoration: underline;
 font-weight: 600;
 }
+#payment-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    font-size: xx-large;
+    border-radius: 15px;
+    padding: 1vh;
+    border: 1px none ;
+    background: rgb(45,151,247);
+background: linear-gradient(288deg, rgba(45,151,247,1) 38%, rgb(84, 160, 226) 72%);
+    outline: none;
+
+}
+
+#click-checkout{
+    display: flex;
+    align-items: center;
+}

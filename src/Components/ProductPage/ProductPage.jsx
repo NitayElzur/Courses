@@ -3,6 +3,10 @@ import "./ProductPage.css";
 import json from "../../json/review.json";
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import {Link } from 'react-router-dom';
+import { Button } from "@mui/base";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 
 function ProductPage() {
     let { id } = useParams();
@@ -35,6 +39,9 @@ function ProductPage() {
          <br /> <img id="prof-course-img" src={data?.proffesorImg}/><br />
         </div>
       </div>
+      <Button id="payment-link">
+     <Link to={`/Payment/${id}`}> <p id="click-checkout">Click to checkout<AddShoppingCartIcon/></p></Link>
+     </Button>
     </div>
   );}
 export default ProductPage;

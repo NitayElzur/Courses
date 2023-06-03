@@ -1,12 +1,37 @@
-#error-header{
+#error-container{
     display: flex;
     justify-content: center;
-    align-items: first baseline;
+    align-items: center;
     font-size: x-large;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    height: 90vh;
 }
 #link-back-home{
     display: flex;
     justify-content: center;
-    align-items:last baseline;
     font-size: larger;
+    border-color: #007bff;
+    background: rgb(45,151,247);
+background: linear-gradient(288deg, rgb(153, 202, 247) 38%, rgb(136, 182, 221) 72%);
+    outline: none;
+    margin: 1vh 0;
+    border-radius: 5px;
+    border-width: 2px;
+    width: 16vw;
+    height: 4vh;
+font-size: x-large;
+}
+
+#error-top{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 5vh;
+font-size: xxx-large;
+}
+#sorry{
+    display: flex;
+    justify-content: center;
 }

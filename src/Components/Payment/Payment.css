@@ -1,0 +1,68 @@
+#credit-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 10vh
+}
+#payment-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+font-size: xx-large;
+}
+#card-form{
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin: 1vh 0;
+    padding: 1vh;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+#credit-card{
+width: 15vw;
+display: flex;
+text-align: center;
+}
+#credit-owner{
+    width: 15vw;
+    display: flex;
+    text-align: center;
+}
+#cvc-expiry{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+#credit-expiry{
+    width: 7vw;
+    display: flex;
+    text-align: center;
+}
+#credit-cvc{
+    width: 7vw;
+    display: flex;
+    text-align: center;
+}
+
+  .form-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+  }
+#payment-btn{
+    padding: 1vh;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    margin-left: 1.2vw; 
+}

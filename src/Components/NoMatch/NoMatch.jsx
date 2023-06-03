@@ -1,22 +1,21 @@
-import "./NoMatch.css"
-import React from "react"
-import { Link } from "react-router-dom"
+import "./NoMatch.css";
+import React from "react";
+import { Link } from "react-router-dom";
 
-function NoMatch(){
-
-return(
-<>
-<div>
-    <div id="error-header">
-        <p>Error 404</p>
-        <p>Sorry, page not found</p>
-    </div>
-    <div id="link-back-home">
-        <Link to="/">Back to Hompe page</Link>
-    </div>
-</div>
-</>
-)
+function NoMatch() {
+  return (
+    <>
+      <div id="error-container">
+          <div id="error-top">
+            <p>Error 404</p> <br />
+          </div>
+          <div id="sorry">
+            <p>Sorry, page not found</p>
+          </div><br />
+          <button id="link-back-home"><Link to="/">Take me to Hompe page</Link></button>
+      </div>
+    </>
+  );
 }
 
-export default NoMatch
+export default NoMatch;
