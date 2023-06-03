@@ -23,8 +23,8 @@ function Layout() {
                     <Link className='headerLink' to={'/courses'}>
                         Courses
                     </Link>
-                    <Link className='headerLink' to={'/admin'}>
-                        Admin Page
+                    <Link className='headerLink' to={'/login'}>
+                        Login
                     </Link>
                 </div>
             </div>
@@ -36,8 +36,8 @@ function Layout() {
                     <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/courses'}>
                         Courses
                     </Link>
-                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/admin'}>
-                        Admin Page
+                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/login'}>
+                        Login
                     </Link>
                 </div>
             }
