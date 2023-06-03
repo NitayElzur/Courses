@@ -8,6 +8,8 @@ import { Button } from "@mui/base";
 const Payment = () => {
   let { id } = useParams();
   const [data, setData] = useState();
+  const [formData, setFormData] = useState({});
+  const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
     setData(json.product.find((value) => value.id == id));
   }, [json, id]);
@@ -16,17 +18,75 @@ const Payment = () => {
     expiry: "",
     cvc: "",
     name: "",
-    focused: ""
+    focused: "",
+  });
+  const [errors, setErrors] = useState({
+    number: "",
+    expiry: "",
+    cvc: "",
+    name: "",
   });
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
-    setState((prev) => ({ ...prev, [name]: value }));
+    if (name === "expiry") {
+      const [month, year] = value.split("/");
+      setState((prev) => ({
+        ...prev,
+        expiry: value,
+        month: month,
+        year: year,
+      }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
+      if (submitted) {
+        if (!/^(0?[1-9]|1[0-2])$/.test(month)) {
+          setErrors((prev) => ({
+            ...prev,
+            expiry: "Please enter a valid month",
+          }));
+        } else if (!/^\d{2}$/.test(year)) {
+          setErrors((prev) => ({ ...prev, expiry: "Please enter a valid year" }));
+        } else {
+          setErrors((prev) => ({ ...prev, expiry: "" }));
+        }
+      }
+    } else if (name === "name") {
+      const nameParts = value.trim().split(" ");
+      const firstName = nameParts[0];
+      const lastName = nameParts[nameParts.length - 1];
+      if (submitted) {
+        setErrors((prev) => ({
+          ...prev,
+          name:
+            firstName && lastName
+              ? ""
+              : "Please enter both first and last name",
+        }));
+      }
+      setState((prev) => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    } else {
+      setState((prev) => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
   const handleInputFocus = (evt) => {
     setState((prev) => ({ ...prev, focus: evt.target.name }));
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    const hasErrors = Object.values(errors).some((error) => error !== "");
+    if (state.name.trim().split(" ").length < 2) {
+      setErrors((prev) => ({
+        ...prev,
+        name: "Please enter both first and last name",
+      }));
+      return;
+    }
+    if (hasErrors) {
+      alert("Please fix the errors in the form");
+      return;
+    }
+    setSubmitted(true);
   };
   return (
     <div id="credit-container">
@@ -45,7 +105,8 @@ const Payment = () => {
       <br />
       <br />
       <form id="card-form" onSubmit={handleSubmit}>
-        <input id="credit-card"
+        <input
+          id="credit-card"
           type="tel"
           name="number"
           placeholder="Card Number"
@@ -55,28 +116,33 @@ const Payment = () => {
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
-        <input id="credit-owner"
+        {errors.number && <div className="error">{errors.number}</div>}
+        <input
+          id="credit-owner"
           type="text"
           name="name"
           placeholder="Name"
-          pattern="[A-Za-z]{2}"
+          pattern="^[A-Za-z\s]+$"
           maxLength="25"
           value={state.name}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
+          className={errors.name ? "error" : ""}
         />
-        <div id="cvc-expiry">
-        <input id="credit-expiry"
+        {errors.name && <div className="error">{errors.name}</div>}
+        <input
+          id="credit-expiry"
           type="text"
           name="expiry"
-          placeholder="Expiry"
-          pattern="\d{4}"
-          maxLength="4"
+          placeholder="MM/YY"
+          maxLength="5"
           value={state.expiry}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
-        <input id= "credit-cvc"
+        {errors.expiry && <div className="error">{errors.expiry} </div>}
+        <input
+          id="credit-cvc"
           type="text"
           name="cvc"
           placeholder="CVC"
@@ -85,21 +151,26 @@ const Payment = () => {
           value={state.cvc}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
-        /></div>
+        />
+        {errors.cvc && <div className="error">{errors.cvc}</div>}
+        <Button
+          id="payment-btn"
+          type="submit"
+          className="btn btn-primary btn-block"
+        >
+          Submit payment
+        </Button>
       </form>
+      {submitted && <p className="submited">Form submitted successfully!</p>}
       <br />
       <div id="course-detailes">
-      <div id="course-checkout">
-        Chosen course: {data?.course} <br />
-        Course starting date: {data?.date} <br />
-        <br />
-      </div>
-      <div className="form-actions">
-        Course price: {data?.price}
-        <Button id="payment-btn" type="submit" className="btn btn-primary btn-block">
-        Submit payment
-        </Button>
-      </div>
+        <div id="course-checkout">
+          Chosen course: {data?.course} <br />
+          {/* Course starting date: {data?.start-date} <br />
+        Course starting date: {data?.end-date} <br /> */}
+          <br />
+        </div>
+        <div className="form-actions">Course price: {data?.price}</div>
       </div>
     </div>
   );

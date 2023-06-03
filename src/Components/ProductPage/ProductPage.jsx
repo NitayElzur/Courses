@@ -33,6 +33,8 @@ function ProductPage() {
         <div id="course-info">
    <p className="course-details">Languages:</p>{data?.languages} <br /><br />
    <p className="course-details">Course length:</p>{data?.length} <br /><br />
+   {/* <p className="course-details">Course starting date: </p>{data?.start-date} <br />
+   <p className="course-details">Course starting date: </p>{data?.end-date} <br /> */}
         </div><br />
         <div id="course-prof-container">
        <p id="course-prof-name">Course Proffesor: {data?.proffesor}</p>  <br />
