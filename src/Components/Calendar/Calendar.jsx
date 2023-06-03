@@ -9,15 +9,15 @@ function Calendar() {
     const navigate = useNavigate();
     const [width, setWidth] = useState(window.innerWidth);
     const colors = [
-        '#32a852',
-        '#540206',
-        '#3244a8',
-        '#a0a832',
-        '#a83290',
-        '#7132a8',
-        '#04701f',
-        '#32e1ed',
-        '#66ffa6'
+        '#59b4c2',
+        '#8059c2',
+        '#5986c2',
+        '#b259c2',
+        '#ba418a',
+        '#bf5268',
+        '#bf5b52',
+        '#bf8b52',
+        '#adbf52'
     ]
     useEffect(() => {
         window.addEventListener('resize', () => setWidth(window.innerWidth))
