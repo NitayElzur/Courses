@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import json from "../../json/review.json";
 import React, { useState, useEffect, useContext } from "react";
 import { MainContext } from "../../Contexts/MainContext";
 import Cards from "react-credit-cards-2";
@@ -8,12 +7,13 @@ import "react-credit-cards-2/dist/es/styles-compiled.css";
 import { Button } from "@mui/base";
 const Payment = () => {
   let { id } = useParams();
-  const {data , setData} = useContext(MainContext)
+  const {data , setData} = useContext(MainContext);
+  const [temp, setTemp] = useState({})
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
-    setData(json.product.find((value) => value.id == id));
-  }, [json, id]);
+    setTemp(data.product.find(value => value.id == id))
+  }, [data, id]);
   const [state, setState] = useState({
     number: "",
     expiry: "",
