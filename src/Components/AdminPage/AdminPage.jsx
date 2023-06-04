@@ -11,25 +11,19 @@ function AdminPage({ isAdmin }) {
     let product = data.product;
     useEffect(() => {
         navigate(!isAdmin && '/login')
-        let tempArr = editable
-        editable.length !== data.product?.length && data.product?.map(() => {
-            tempArr.push(false)
-        })
-        setEditable(tempArr);
     }, [data.proudct])
     useEffect(() => {
         setData({ ...data, product: product })
     }, [product])
-    console.log(data);
     return (
         <div id="adminMain">
             {data &&
                 data.product?.map((value, index) => {
                     return (
                         <>
-                            {editable[index]
+                            {editable.includes(value.id)
                                 ?
-                                <CourseForm value={value} index={index} editable={editable} setEditable={setEditable} />
+                                <CourseForm key={index} value={value} index={index} editable={editable} setEditable={setEditable} />
                                 :
                                 <div key={index} className='courseItem'>
                                     Course name: {value.course} <br />
@@ -38,9 +32,7 @@ function AdminPage({ isAdmin }) {
                                     Price: {value.price}
                                     <div id='adminButtons'>
                                         <button className='adminButton' onClick={() => {
-                                            const tempArr = editable;
-                                            tempArr[index] = true;
-                                            setEditable(tempArr);
+                                            setEditable([...editable, value.id]);
                                             setData({ ...data })
                                         }}>Edit</button>
                                         <button className='adminButton' onClick={() => {
@@ -50,7 +42,7 @@ function AdminPage({ isAdmin }) {
                                 </div>
                             }
 
-                            <hr />
+                            <hr/>
                         </>
                     )
                 })
@@ -58,7 +50,7 @@ function AdminPage({ isAdmin }) {
             <button className='adminButton' onClick={() => {
                 const temp = data.product;
                 temp.push({
-                    "id": '',
+                    "id": data.product.toSorted((a, b) => a.id - b.id)[data.product.length - 1].id + 1,
                     "course": "",
                     "img": "",
                     "languages": "",
@@ -73,7 +65,8 @@ function AdminPage({ isAdmin }) {
                     "proffesor": "",
                     "proffesor-education": ""
                 })
-                setData({...data, product: [...temp]})
+                setData({ ...data, product: [...temp] })
+                setEditable(prev => [...prev, temp.pop().id + 1])
             }}>Add New Course</button>
         </div>
     )

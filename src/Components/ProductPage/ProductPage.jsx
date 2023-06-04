@@ -8,9 +8,9 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 function ProductPage() {
   let { id } = useParams();
   const { data, setData } = useContext(MainContext);
-  const [temp, setTemp] = useState([]);
+  const [temp, setTemp] = useState({});
    useEffect(() => {
-    setTemp(data.product.find(value => value.id == id))
+    setTemp(data.product?.find(value => value.id == id))
   }, [data, id]);
   
   return (
@@ -31,8 +31,8 @@ function ProductPage() {
         <div id="course-info">
           <p className="course-details">Languages:</p>{temp?.languages} <br /><br />
           <p className="course-details">Course length:</p>{temp?.length} <br /><br />
-          <p className="course-details">Course starting date: </p>{temp['start-date']} <br />
-          <p className="course-details">Course starting date: </p>{temp['end-date']} <br />
+          <p className="course-details">Course starting date: </p>{temp && temp['start-date']} <br />
+          <p className="course-details">Course starting date: </p>{temp && temp['end-date']} <br />
         </div><br />
         <div id="course-prof-container">
           <p id="course-prof-name">Course Proffesor: {temp?.proffesor}</p>  <br />

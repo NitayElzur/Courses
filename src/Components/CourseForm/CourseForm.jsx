@@ -11,8 +11,7 @@ function CourseForm({ value, index , editable, setEditable}) {
             const temp = data.product;
             temp[index] = { ...currentValue }
             setData({ ...data, product: [...temp] })
-            const tempArr = editable;
-            tempArr[index] = false;
+            const tempArr = editable.filter((v) => v !== value.id);
             setEditable([...tempArr])
         })}>
             <div id='courseInputs'>
@@ -26,13 +25,13 @@ function CourseForm({ value, index , editable, setEditable}) {
                 </div>
                 <div className="courseInput">
                     Start Date:
-                    <input placeholder={errors ? errors['start-date']?.message : ''} type="text" value={currentValue['start-date']} onInput={(e) => {
+                    <input placeholder={errors ? errors['start-date']?.message : ''} type="date" value={currentValue['start-date']} onInput={(e) => {
                         setCurrentValue({ ...currentValue, 'start-date': e.target.value })
                     }}{
                         ...register('start-date', { required: 'Field Is Required' })
                         } />
                     End Date:
-                    <input placeholder={errors ? errors['end-date']?.message : ''} type="text" value={currentValue['end-date']} onInput={e => {
+                    <input placeholder={errors ? errors['end-date']?.message : ''} type="date" value={currentValue['end-date']} onInput={e => {
                         setCurrentValue({...currentValue, 'end-date': e.target.value})
                     }} {
                         ...register('end-date', { required: 'Field Is Required' })
@@ -60,6 +59,14 @@ function CourseForm({ value, index , editable, setEditable}) {
                         setCurrentValue({ ...currentValue, price: `${e.target.value}$` })
                     }}{
                         ...register('price', { required: 'Field Is Required' })
+                        } />
+                </div>
+                <div className="courseInput">
+                    Proffesor:
+                    <input placeholder={errors ? errors.proffesor?.message : ''} type="text" value={currentValue.proffesor} onInput={(e) => {
+                        setCurrentValue({ ...currentValue, 'proffesor': e.target.value })
+                    }}{
+                        ...register('proffesor', { required: 'Field Is Required' })
                         } />
                 </div>
                 <div className="courseInput">

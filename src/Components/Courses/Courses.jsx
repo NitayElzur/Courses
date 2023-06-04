@@ -1,13 +1,11 @@
 import './Courses.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useContext } from "react";
-import json from "../../json/review.json";
 import React from 'react';
 import Calendar from '../Calendar/Calendar';
 import { MainContext } from '../../Contexts/MainContext';
 
 function Courses() {
-    const {data, setData} = useContext(MainContext);
     return (
         <div id="courseMain">
             <div className="courseText">Our Courses:</div>
