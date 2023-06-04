@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import { MainContext } from "../../Contexts/MainContext";
+import emailjs from "emailjs-com";
 import Cards from "react-credit-cards-2";
 import "./Payment.css";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
-import { Button } from "@mui/base";
+import { Button } from "@mui/material";
+
 const Payment = () => {
   let { id } = useParams();
-  const {data , setData} = useContext(MainContext);
+  const form = useRef();
+  const { data, setData } = useContext(MainContext);;
   const [temp, setTemp] = useState({})
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
     setTemp(data.product?.find(value => value.id == id))
   }, [data, id]);
@@ -21,12 +25,15 @@ const Payment = () => {
     name: "",
     focused: "",
   });
+
   const [errors, setErrors] = useState({
     number: "",
     expiry: "",
     cvc: "",
     name: "",
+    email: "",
   });
+
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     if (name === "expiry") {
@@ -37,17 +44,14 @@ const Payment = () => {
         month: month,
         year: year,
       }));
+    } else if (name === "email") {
       setFormData((prev) => ({ ...prev, [name]: value }));
+      setState((prev) => ({ ...prev, [name]: value }));
       if (submitted) {
-        if (!/^(0?[1-9]|1[0-2])$/.test(month)) {
-          setErrors((prev) => ({
-            ...prev,
-            expiry: "Please enter a valid month",
-          }));
-        } else if (!/^\d{2}$/.test(year)) {
-          setErrors((prev) => ({ ...prev, expiry: "Please enter a valid year" }));
+        if (!value || !/\S+@\S+\.\S+/.test(value)) {
+          setErrors((prev) => ({ ...prev, email: "Please enter a valid email" }));
         } else {
-          setErrors((prev) => ({ ...prev, expiry: "" }));
+          setErrors((prev) => ({ ...prev, email: "" }));
         }
       }
     } else if (name === "name") {
@@ -57,10 +61,7 @@ const Payment = () => {
       if (submitted) {
         setErrors((prev) => ({
           ...prev,
-          name:
-            firstName && lastName
-              ? ""
-              : "Please enter both first and last name",
+          name: firstName && lastName ? "" : "Please enter both first and last name",
         }));
       }
       setState((prev) => ({ ...prev, [name]: value }));
@@ -70,25 +71,39 @@ const Payment = () => {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
+
   const handleInputFocus = (evt) => {
-    setState((prev) => ({ ...prev, focus: evt.target.name }));
+    setState((prev) => ({ ...prev, focused: evt.target.name }));
   };
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const hasErrors = Object.values(errors).some((error) => error !== "");
-    if (state.name.trim().split(" ").length < 2) {
-      setErrors((prev) => ({
-        ...prev,
-        name: "Please enter both first and last name",
-      }));
+
+    if (!state.email || !/\S+@\S+\.\S+/.test(state.email)) {
+      setErrors((prev) => ({ ...prev, email: "Please enter a valid email" }));
       return;
     }
+
     if (hasErrors) {
       alert("Please fix the errors in the form");
       return;
     }
+
     setSubmitted(true);
+
+    emailjs
+      .sendForm("service_courses", "template_payment", form.current, "TSieCXYqsZ-oSOQi3")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
+
   return (
     <div id="credit-container">
       <div id="payment-header">
@@ -103,9 +118,9 @@ const Payment = () => {
         name={state.name}
         focused={state.focus}
       />
-      <br />
-      <br />
-      <form id="card-form" onSubmit={handleSubmit}>
+      <form id="card-form" ref={form} onSubmit={handleSubmit}>
+        <br />
+        <br />
         <input
           id="credit-card"
           type="tel"
@@ -113,7 +128,7 @@ const Payment = () => {
           placeholder="Card Number"
           pattern="\d{16}"
           maxLength="16"
-          value={state.number}
+          value={state.number || ""}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
@@ -125,7 +140,7 @@ const Payment = () => {
           placeholder="Name"
           pattern="^[A-Za-z\s]+$"
           maxLength="25"
-          value={state.name}
+          value={state.name || ""}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
           className={errors.name ? "error" : ""}
@@ -137,7 +152,7 @@ const Payment = () => {
           name="expiry"
           placeholder="MM/YY"
           maxLength="5"
-          value={state.expiry}
+          value={state.expiry || ""}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
@@ -149,22 +164,36 @@ const Payment = () => {
           placeholder="CVC"
           pattern="\d{3}"
           maxLength="3"
-          value={state.cvc}
+          value={state.cvc || ""}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
         {errors.cvc && <div className="error">{errors.cvc}</div>}
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          maxLength="50"
+          value={state.email || ""}
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+        />
+        {errors.email && <div className="error">{errors.email}</div>}
+
         <Button
           id="payment-btn"
           type="submit"
           className="btn btn-primary btn-block"
+          value="sendForm"
         >
           Submit payment
         </Button>
       </form>
-      {submitted && <p className="submited">Form submitted successfully!</p>}
+      {submitted && <p className="submitted">Form submitted successfully!</p>}
       <br />
-      <div id="course-detailes">
+      <div id="course-details">
         <div id="course-checkout">
           Chosen course: {temp?.course} <br />
           Course starting date: {temp && temp['start-date']} <br />
@@ -176,4 +205,5 @@ const Payment = () => {
     </div>
   );
 };
+
 export default Payment;

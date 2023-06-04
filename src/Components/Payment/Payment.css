@@ -48,6 +48,11 @@ text-align: center;
     display: flex;
     text-align: center;
 }
+#email{
+    width: 15vw;
+display: flex;
+text-align: center;
+}
 
   .form-actions{
     display: flex;
