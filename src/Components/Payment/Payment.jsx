@@ -14,6 +14,7 @@ const Payment = () => {
   const [temp, setTemp] = useState({})
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  
 
   useEffect(() => {
     setTemp(data.product?.find(value => value.id == id))
@@ -93,7 +94,7 @@ const Payment = () => {
     setSubmitted(true);
 
     emailjs
-      .sendForm("service_courses", "template_payment", form.current, "TSieCXYqsZ-oSOQi3")
+      .sendForm("service_courses", "template_payment", form.current, "TSieCXYqsZ-oSOQi3" )
       .then(
         (result) => {
           console.log(result.text);
