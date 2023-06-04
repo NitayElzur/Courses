@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Carousel.css'
-function Carousel({ children, infiniteLoop }) {
-    const [length, setLength] = useState(children.length)
+function Carousel({ children, infiniteLoop, specialLength }) {
+    const [length, setLength] = useState(0)
     const [touchPosition, setTouchPosition] = useState(null)
     const [currentIndex, setCurrentIndex] = useState(0)
     const handleTouchStart = (e) => {
@@ -9,7 +9,7 @@ function Carousel({ children, infiniteLoop }) {
         setTouchPosition(touchDown)
     }
     useEffect(() => {
-        setLength(children.length)
+        setLength(specialLength ? children?.length / 2 : children?.length)
         let time;
         if (infiniteLoop) {
              time = setInterval(() => {

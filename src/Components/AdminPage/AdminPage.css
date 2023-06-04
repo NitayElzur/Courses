@@ -25,4 +25,17 @@
     width: 10vw;
     border: 1px solid black;
     border-radius: 10px;
+    margin-bottom: 5vh;
+}
+
+.adminBigText {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.profItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
 }

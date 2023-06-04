@@ -1,23 +1,24 @@
 import './HomePage.css'
 import Carousel from '../Carousel/Carousel';
 import RevCard from '../RevCard/RevCard';
-import json from '../../json/review.json'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ProfCard from '../ProfCarousel/ProfCard';
+import { MainContext } from '../../Contexts/MainContext';
 function HomePage() {
     const [reviews, setReviews] = useState([]);
     const [proffesors, setProffesors] = useState([]);
+    const {data, setData} = useContext(MainContext);
     useEffect(() => {
-        setReviews(json.graduates);
-        setProffesors(json.proffesors);
-    }, [json])
+        setReviews(data.graduates);
+        setProffesors(data.proffesors);
+    }, [data])
     return (
         <div id='homeMain'>
             <div id="homeBanner">
                 <span>Ignite Your Passion for Technology through Expert Training</span>
             </div>
             <div className='homeBigText'>Our Proffesors:</div>
-            <Carousel>
+            <Carousel specialLength={true}>
                 {proffesors &&
                     proffesors.map((value, index) => {
                         return (
