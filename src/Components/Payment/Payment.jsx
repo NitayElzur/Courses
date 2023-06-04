@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
 import json from "../../json/review.json";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { MainContext } from "../../Contexts/MainContext";
 import Cards from "react-credit-cards-2";
 import "./Payment.css";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import { Button } from "@mui/base";
 const Payment = () => {
   let { id } = useParams();
-  const [data, setData] = useState();
+  const {data , setData} = useContext(MainContext)
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
@@ -166,8 +167,8 @@ const Payment = () => {
       <div id="course-detailes">
         <div id="course-checkout">
           Chosen course: {data?.course} <br />
-          {/* Course starting date: {data?.start-date} <br />
-        Course starting date: {data?.end-date} <br /> */}
+          Course starting date: {data['start-date']} <br />
+          Course starting date: {data['end-date']} <br />
           <br />
         </div>
         <div className="form-actions">Course price: {data?.price}</div>
