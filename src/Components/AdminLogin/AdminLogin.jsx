@@ -17,11 +17,11 @@ function AdminLogin({isAdmin, setIsAdmin}) {
     }, [isAdmin])
     function onSubmit(e) {
         const h = ''
-        if (!data.admin.some(v => v.username === e.username)) {
+        if (!data.admin?.some(v => v.username === e.username)) {
             setFormData({username: '' , password: ''});
             alert('Username does not exist');
         }
-        else if (!data.admin.some(v => v.username === e.username && v.password === e.password)) {
+        else if (!data.admin?.some(v => v.username === e.username && v.password === e.password)) {
             setFormData({ ...formData, password: '' });
             alert('Incorrect password')
         }

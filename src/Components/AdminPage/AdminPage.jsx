@@ -16,10 +16,11 @@ function AdminPage({ isAdmin }) {
             tempArr.push(false)
         })
         setEditable(tempArr);
-    }, [data.product])
+    }, [data.proudct])
     useEffect(() => {
         setData({ ...data, product: product })
     }, [product])
+    console.log(data);
     return (
         <div id="adminMain">
             {data &&
