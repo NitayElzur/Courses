@@ -1,16 +1,13 @@
 import './Courses.css';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import json from "../../json/review.json";
 import React from 'react';
 import Calendar from '../Calendar/Calendar';
+import { MainContext } from '../../Contexts/MainContext';
 
 function Courses() {
-    const [product, setProduct] = useState([]);
-
-    useEffect(() => {
-        setProduct(json.product);
-    }, []);
+    const {data, setData} = useContext(MainContext);
     return (
         <div id="courseMain">
             <div className="courseText">Our Courses:</div>
@@ -27,7 +24,7 @@ function Courses() {
             </div>
             <div className="courseText">Our Upcoming Courses:</div>
             <div id="courseCalendar">
-                <Calendar data={product} setData={setProduct}/>
+                <Calendar/>
             </div>
         </div>
     )
