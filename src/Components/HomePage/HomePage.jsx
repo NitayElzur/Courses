@@ -1,5 +1,4 @@
 import './HomePage.css'
-import ProfCarousel from '../ProfCarousel/ProfCarousel'
 import Carousel from '../Carousel/Carousel';
 import RevCard from '../RevCard/RevCard';
 import json from '../../json/review.json'
@@ -17,7 +16,7 @@ function HomePage() {
             <div id="homeBanner">
                 <span>Ignite Your Passion for Technology through Expert Training</span>
             </div>
-            <div>Our Proffesors:</div>
+            <div className='homeBigText'>Our Proffesors:</div>
             <Carousel>
                 {proffesors &&
                     proffesors.map((value, index) => {
@@ -27,7 +26,7 @@ function HomePage() {
                     })
                 }
             </Carousel>
-                <div>Student Reviews:</div>
+                <div className='homeBigText'>Student Reviews:</div>
             <Carousel infiniteLoop={true}>
                 {reviews &&
                     reviews.map((value, index) => {

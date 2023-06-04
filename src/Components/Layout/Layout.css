@@ -144,4 +144,8 @@
     #layoutFooter {
         padding: 2vh;
     }
+
+    .footerColumnLink {
+        width: 25%;
+    }
 }

@@ -12,7 +12,7 @@ const Payment = () => {
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
-    setTemp(data.product.find(value => value.id == id))
+    setTemp(data.product?.find(value => value.id == id))
   }, [data, id]);
   const [state, setState] = useState({
     number: "",
@@ -167,8 +167,8 @@ const Payment = () => {
       <div id="course-detailes">
         <div id="course-checkout">
           Chosen course: {temp?.course} <br />
-          Course starting date: {temp['start-date']} <br />
-          Course starting date: {temp['end-date']} <br />
+          Course starting date: {temp && temp['start-date']} <br />
+          Course starting date: {temp && temp['end-date']} <br />
           <br />
         </div>
         <div className="form-actions">Course price: {temp?.price}</div>
