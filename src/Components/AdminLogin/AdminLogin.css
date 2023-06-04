@@ -40,3 +40,13 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+    #adminLogMain {
+        padding: 5vh 0;
+    }
+
+    #adminForm {
+        width: 80%;
+    }
+}
