@@ -4,9 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { MainContext } from '../../Contexts/MainContext'
 import CourseForm from '../CourseForm/CourseForm';
+import ProfForm from '../ProfForm/ProfForm';
 function AdminPage({ isAdmin }) {
     const { data, setData } = useContext(MainContext);
-    const [editable, setEditable] = useState([])
+    const [editable, setEditable] = useState([]);
+    const [profEditable, setProfEditable] = useState([]);
     const navigate = useNavigate();
     let product = data.product;
     useEffect(() => {
@@ -17,7 +19,7 @@ function AdminPage({ isAdmin }) {
     }, [product])
     return (
         <div id="adminMain">
-            Courses:
+            <div className="adminBigText">Courses:</div>
             {data &&
                 data.product?.map((value, index) => {
                     return (
@@ -43,7 +45,7 @@ function AdminPage({ isAdmin }) {
                                 </div>
                             }
 
-                            <hr/>
+                            <hr />
                         </>
                     )
                 })
@@ -70,7 +72,49 @@ function AdminPage({ isAdmin }) {
                 setData({ ...data, product: [...temp] })
                 setEditable(prev => [...prev, temp.pop().id + 1])
             }}>Add New Course</button>
-            Proffesor:
+            <div className="adminBigText">Proffesors:</div>
+            {data &&
+                data.proffesors?.map((value, index) => {
+                    return (
+                        <>
+                            {profEditable.includes(value.id)
+                                ?
+                                <ProfForm value={value} index={index} editable={profEditable} setEditable={setProfEditable} />
+                                :
+                                <div className="profItem">
+                                    Proffesor Name: {value.name} <br />
+                                    Type of Experience: {value.practice} <br />
+                                    Years of Experience: {value.qualification} <br />
+                                    Prior Jobs: {value.work}
+                                    <div className='profButtons'>
+                                        <button className='adminButton' onClick={() => {
+                                            setProfEditable([...profEditable, value.id])
+                                            setData({ ...data })
+                                        }}>Edit</button>
+                                        <button className='adminButton' onClick={() => {
+                                            setData({ ...data, proffesors: data.proffesors.filter((v, i) => i !== index) })
+                                        }}>Delete</button>
+                                    </div>
+                                </div>
+                            }
+                            <hr />
+                        </>
+                    )
+                })
+            }
+            <button className='adminButton' type='button' onClick={() => {
+                const temp = data.proffesors;
+                temp.push({
+                    "id": data.proffesors.toSorted((a, b) => a.id - b.id)[data.proffesors.length - 1].id + 1,
+                    "img": "",
+                    "name": "",
+                    "practice": "",
+                    "qualification": "",
+                    "work": ""
+                })
+                setData({ ...data, proffesors: temp })
+                setProfEditable(prev => [...prev, temp[temp.length - 1].id ])
+            }}>Add New Proffesor</button>
         </div>
     )
 }
