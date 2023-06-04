@@ -12,7 +12,7 @@ function NoMatch() {
           <div id="sorry">
             <p>Sorry, page not found</p>
           </div><br />
-          <button id="link-back-home"><Link to="/">Take me to Hompe page</Link></button>
+          <button id="link-back-home"><Link to="/">Take me to Home page</Link></button>
       </div>
     </>
   );

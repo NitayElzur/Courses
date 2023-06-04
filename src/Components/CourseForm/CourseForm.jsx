@@ -94,6 +94,14 @@ function CourseForm({ value, index , editable, setEditable}) {
                         } />
                 </div>
                 <div className="courseInput">
+                    Course Icon (in 64x64px):
+                    <input placeholder={errors ? errors.courseIcon?.message : ''} type="text" className='pictureInput' value={currentValue.icon} onInput={(e) => {
+                        setCurrentValue({ ...currentValue, icon: e.target.value })
+                    }}{
+                        ...register('courseIcon', { required: 'Field Is Required' })
+                        } />
+                </div>
+                <div className="courseInput">
                     First Paragraph :
                     <textarea name="paragraph1" cols="50" rows="5" value={value['paragrath1']} onInput={e => {
                         setCurrentValue({...currentValue, 'paragrath1': e.target.value})

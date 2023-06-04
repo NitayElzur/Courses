@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 import { MainContext } from '../../Contexts/MainContext';
 function Calendar() {
     const { data, setData } = useContext(MainContext);
+    const [events, setEvents] = useState([]);
     const navigate = useNavigate();
     const [width, setWidth] = useState(window.innerWidth);
     const colors = [
@@ -32,7 +33,6 @@ function Calendar() {
         })
         setEvents(tempArr)
     }, [data])
-    const [events, setEvents] = useState([]);
     return (
         <FullCalendar
             plugins={[dayGridPlugin]}

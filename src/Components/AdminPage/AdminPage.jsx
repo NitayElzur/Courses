@@ -17,6 +17,7 @@ function AdminPage({ isAdmin }) {
     }, [product])
     return (
         <div id="adminMain">
+            Courses:
             {data &&
                 data.product?.map((value, index) => {
                     return (
@@ -63,11 +64,13 @@ function AdminPage({ isAdmin }) {
                     "paragrath3": "",
                     "proffesorImg": "",
                     "proffesor": "",
+                    "icon": "",
                     "proffesor-education": ""
                 })
                 setData({ ...data, product: [...temp] })
                 setEditable(prev => [...prev, temp.pop().id + 1])
             }}>Add New Course</button>
+            Proffesor:
         </div>
     )
 }

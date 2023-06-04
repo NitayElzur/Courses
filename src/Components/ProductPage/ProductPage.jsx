@@ -1,5 +1,5 @@
 import "./ProductPage.css";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import React, { useState, useEffect, useContext } from "react";
 import { MainContext } from "../../Contexts/MainContext";
 import { Link } from 'react-router-dom';
@@ -9,10 +9,13 @@ function ProductPage() {
   let { id } = useParams();
   const { data, setData } = useContext(MainContext);
   const [temp, setTemp] = useState({});
-   useEffect(() => {
-    setTemp(data.product?.find(value => value.id == id))
+  const navigate = useNavigate();
+  useEffect(() => {
+    data.product?.find(value => value.id == id)
+      ? setTemp(data.product?.find(value => value.id == id))
+      : navigate('/errorpage')
   }, [data, id]);
-  
+
   return (
     <div id="course-container">
       <div id="top-course-container">

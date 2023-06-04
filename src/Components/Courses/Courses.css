@@ -35,7 +35,13 @@ gap: 5vw;
 .icon-img{
     width: 64px;
     height: 64px;
+    transition: all 0.3s;
 }
+
+.icon-img:hover {
+    transform: scale(1.2);
+}
+
 .icon-header{
     display: flex;
     justify-content: center;
