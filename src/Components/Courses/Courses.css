@@ -31,7 +31,6 @@ justify-content: space-around;
 align-items: center;
 gap: 5vw;
 }
-
 .icon-img{
     width: 64px;
     height: 64px;
@@ -41,12 +40,38 @@ gap: 5vw;
 .icon-img:hover {
     transform: scale(1.2);
 }
+.icon-img {
+    transition: transform 0.5s ease;
+}
 
+.icon-img::after,
+.icon-img::before {
+    position: absolute;
+    width: 0;
+    opacity: 0;
+}
+
+.icon-img::after {
+    left: 50%;
+}
+
+.icon-img::before {
+    right: 50%;
+}
+
+.icon-img:hover::before,
+.icon-img:hover::after {
+    width: 60%;
+    opacity: 1;
+}
+
+.icon-img:hover {
+    transform: scale(1.2);
+}
 .icon-header{
     display: flex;
     justify-content: center;
 }
-
 @media only screen and (max-width: 660px){
     #icon-course-container{
         display: flex;
