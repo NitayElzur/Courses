@@ -12,7 +12,7 @@ import AdminPage from './Components/AdminPage/AdminPage';
 import Payment from './Components/Payment/Payment';
 import NoMatch from './Components/NoMatch/NoMatch';
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState([false, ''])
   const [data, setData] = useState(useContext(MainContext))
   useEffect(() => {
     setData(json);
@@ -27,7 +27,7 @@ function App() {
             <Route path='ProductPage' element={<ProductPage />} />
             <Route path='ProductPage/:id' element={<ProductPage />} />
             <Route path='login' element={<AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
-            <Route path='admin' element={<AdminPage isAdmin={isAdmin} />} />
+            <Route path='admin' element={<AdminPage isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>} />
             <Route path='Payment' element={<Payment />} />
             <Route path='Payment/:id' element={<Payment />} />
           </Route>
