@@ -16,16 +16,20 @@
     align-items: center;
     font-size: 0.9rem;
     justify-content: space-between;
-    margin: 1vh 0;
+    margin: 2vh 0;
 }
 
 .adminButton {
-    margin-right: 10px;
     height: 5vh;
     width: 10vw;
     border: 1px solid black;
     border-radius: 10px;
-    margin-bottom: 5vh;
+    margin-right: 1vw;
+}
+
+#adminButtons {
+  display: flex;
+  align-items: center;
 }
 @media only screen and (max-width: 600px){
     .adminButton{
