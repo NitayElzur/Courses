@@ -2,7 +2,7 @@ import './CourseForm.css'
 import { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { MainContext } from '../../Contexts/MainContext';
-function CourseForm({ value, index , editable, setEditable}) {
+function CourseForm({ value, index, editable, setEditable }) {
     const { data, setData } = useContext(MainContext);
     const { formState: { errors }, register, handleSubmit } = useForm();
     const [currentValue, setCurrentValue] = useState(value);
@@ -32,10 +32,10 @@ function CourseForm({ value, index , editable, setEditable}) {
                         } />
                     End Date:
                     <input placeholder={errors ? errors['end-date']?.message : ''} type="date" value={currentValue['end-date']} onInput={e => {
-                        setCurrentValue({...currentValue, 'end-date': e.target.value})
+                        setCurrentValue({ ...currentValue, 'end-date': e.target.value })
                     }} {
                         ...register('end-date', { required: 'Field Is Required' })
-                    } />
+                        } />
                 </div>
                 <div className="courseInput">
                     Languages:
@@ -104,19 +104,19 @@ function CourseForm({ value, index , editable, setEditable}) {
                 <div className="courseInput">
                     First Paragraph :
                     <textarea name="paragraph1" cols="50" rows="5" value={value['paragrath1']} onInput={e => {
-                        setCurrentValue({...currentValue, 'paragrath1': e.target.value})
+                        setCurrentValue({ ...currentValue, 'paragrath1': e.target.value })
                     }}></textarea>
                 </div>
                 <div className="courseInput">
                     Second Paragraph :
                     <textarea name="paragraph1" cols="50" rows="5" value={value['paragrath2']} onInput={e => {
-                        setCurrentValue({...currentValue, 'paragrath2': e.target.value})
+                        setCurrentValue({ ...currentValue, 'paragrath2': e.target.value })
                     }}></textarea>
                 </div>
                 <div className="courseInput">
                     Third Paragraph :
                     <textarea name="paragraph1" cols="50" rows="5" value={value['paragrath3']} onInput={e => {
-                        setCurrentValue({...currentValue, 'paragrath3': e.target.value})
+                        setCurrentValue({ ...currentValue, 'paragrath3': e.target.value })
                     }}></textarea>
                 </div>
             </div>
