@@ -41,7 +41,7 @@ const Payment = () => {
       const currentDate = new Date();
       const currentYear = currentDate.getFullYear() % 100;
       const enteredDate = new Date(`20${year}`, month - 1);
-      const expiryRegex = /^(0[1-9]|1[0-2])\/(2[3-9]|3[0-5])$/;
+      const expiryRegex = /^(0[1-9]|1[0-2])\/(2[2-9]|3[0-5])$/;
   
       if (!expiryRegex.test(newValue) || enteredDate < currentDate) {
         setErrors((prev) => ({
@@ -105,7 +105,6 @@ const Payment = () => {
       return;
     }
     setSubmitted(true);
-    console.log(form.current);
     emailjs
       .sendForm(
         "service_courses",
