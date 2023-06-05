@@ -132,6 +132,10 @@
     border-radius: 10px;
 }
 
+#whatsapp {
+    color: green;
+}
+
 @media screen and (max-width: 768px) {
     #mobileLinks {
         display: block;
