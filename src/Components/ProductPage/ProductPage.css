@@ -16,20 +16,26 @@
 }
 #course-name{
     position: absolute;
-    margin-right: 50vw;
-    margin-bottom: 8vh;
+    margin-right: 36vw;
+    margin-bottom: 7vh;
+    padding: 2vw;
     font-size: 500%;
     color: rgb(220,238,241);
-color: linear-gradient(180deg, rgba(220,238,241,1) 25%, rgba(178,234,244,1) 50%, rgba(220,237,241,1) 75%);
+    color: linear-gradient(180deg, rgba(220,238,241,1) 25%, rgba(178,234,244,1) 50%, rgba(220,237,241,1) 75%);
 }
-@media only screen and (max-width: 486px){
+@media only screen and (max-width: 928px){
     #course-name{
         font-size: 400%;
     }
 }
-@media only screen and (max-width: 388px){
+@media only screen and (max-width: 615px){
     #course-name{
         font-size: 300%;
+    }
+}
+@media only screen and (max-width: 460px){
+    #course-name{
+        font-size: 200%;
     }
 }
 #course-img{
@@ -40,10 +46,10 @@ color: linear-gradient(180deg, rgba(220,238,241,1) 25%, rgba(178,234,244,1) 50%,
     align-items: center;
 }
 #course-paragraths{
-    width: 90vw;
+padding: 2vw;
 }
 #course-info{
-    width: 90vw;
+    padding: 2vw;
 }
 #course-prof-container{
     display: flex;

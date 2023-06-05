@@ -1,6 +1,6 @@
 #adminMain {
     margin: 5vw 0;
-    width: 100%;
+    width: 96%;
     border-radius: 10px;
     background-color: white;
     padding: 2vw;
@@ -26,6 +26,24 @@
     border: 1px solid black;
     border-radius: 10px;
     margin-bottom: 5vh;
+}
+@media only screen and (max-width: 600px){
+    .adminButton{
+        height: 7vh;
+        width: 12vw;
+    }
+}
+@media only screen and (max-width: 493px){
+    .adminButton{
+        height: 8vh;
+        width: 14vw;
+    }
+}
+@media only screen and (max-width: 413px){
+    .adminButton{
+        height: 9.5vh;
+        width: 17vw;
+    }
 }
 
 .adminBigText {

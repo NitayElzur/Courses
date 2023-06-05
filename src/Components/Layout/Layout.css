@@ -111,6 +111,7 @@
 }
 
 .footerColumnLink {
+margin-top: 4vh;   
     height: 25vh;
     display: flex;
     flex-direction: column;

@@ -5,7 +5,14 @@
     align-items: center;
     align-content: center;
     flex-direction: column;
-    margin: 10vh
+    margin: 10vh;
+}
+#course-checkout{
+    font-size: 1.25rem
+}
+.form-actions{
+    font-size: 1.25rem
+
 }
 #payment-header{
     display: flex;
@@ -22,6 +29,7 @@ input {
     padding: 1vh;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: large;
   }
   input:focus {
     outline: none;
@@ -29,30 +37,39 @@ input {
   }
 #credit-card{
     margin-top: 5vh;
-width: 20vw;
 display: flex;
 text-align: center;
 }
 #credit-owner{
-    width: 20vw;
     display: flex;
     text-align: center;
 }
-
+#expiry-cvc{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1vw;
+}
 #credit-expiry{
-    width: 7vw;
+    width: 100%;
     display: flex;
     text-align: center;
+}
+#expiry{
+    width: 17vw;
+    display: flex;
+    flex-direction: column;
 }
 #credit-cvc{
-    width: 7vw;
+    width: 13vw;
+    height: 100%;
     display: flex;
     text-align: center;
 }
 #email{
-    width: 20vw;
-display: flex;
-text-align: center;
+    display: flex;
+    text-align: center;
 }
   .form-actions{
     display: flex;
@@ -61,18 +78,37 @@ text-align: center;
     margin-top: 2vh;
   }
 #payment-btn{
-    border: 1px solid #ccc;
     border-radius: 5px; 
 margin: 3vh;
+background-image: linear-gradient(to right, #3ea2e9 25%, #7373e9 75%);
+color: black;
 }
 .error{
-display: flex;
-justify-content: end;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.7rem;
 }
-
 .submited{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
+}
+@media only screen and (max-width: 1200px){
+    #expiry{
+        width: 50%;
+    }
+    .error{
+        font-size: 0.6rem;
+    }
+}
+@media only screen and (max-width: 897px){
+    #expiry{
+        width: 60%;
+    }
+    .error{
+        font-size: 0.7rem;
+    }
 }

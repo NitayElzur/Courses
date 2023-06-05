@@ -65,3 +65,9 @@ input {
     outline: none;
     border-color: #007bff;
   }
+  .submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
