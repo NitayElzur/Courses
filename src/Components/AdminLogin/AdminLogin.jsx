@@ -13,7 +13,7 @@ function AdminLogin({isAdmin, setIsAdmin}) {
         password: ''
     })
     useEffect(() => {
-        isAdmin && navigate('/admin')
+        isAdmin[0] && navigate('/admin')
     }, [isAdmin])
     function onSubmit(e) {
         const h = ''
@@ -26,7 +26,7 @@ function AdminLogin({isAdmin, setIsAdmin}) {
             alert('Incorrect password')
         }
         else {
-            setIsAdmin(true);
+            setIsAdmin([true, formData.username]);
         }
     }
     return (
