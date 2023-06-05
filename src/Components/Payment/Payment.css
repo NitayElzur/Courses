@@ -28,12 +28,13 @@ input {
     border-color: #007bff;
   }
 #credit-card{
-width: 15vw;
+    margin-top: 5vh;
+width: 20vw;
 display: flex;
 text-align: center;
 }
 #credit-owner{
-    width: 15vw;
+    width: 20vw;
     display: flex;
     text-align: center;
 }
@@ -49,11 +50,10 @@ text-align: center;
     text-align: center;
 }
 #email{
-    width: 15vw;
+    width: 20vw;
 display: flex;
 text-align: center;
 }
-
   .form-actions{
     display: flex;
     justify-content: center;
@@ -61,9 +61,9 @@ text-align: center;
     margin-top: 2vh;
   }
 #payment-btn{
-    padding: 1vh;
     border: 1px solid #ccc;
     border-radius: 5px; 
+margin: 3vh;
 }
 .error{
 display: flex;

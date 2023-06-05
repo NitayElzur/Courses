@@ -1,23 +1,20 @@
 import { useParams } from "react-router-dom";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { MainContext } from "../../Contexts/MainContext";
 import emailjs from "emailjs-com";
 import Cards from "react-credit-cards-2";
 import "./Payment.css";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import { Button } from "@mui/material";
-
 const Payment = () => {
   let { id } = useParams();
   const form = useRef();
-  const { data, setData } = useContext(MainContext);;
-  const [temp, setTemp] = useState({})
+  const { data, setData } = useContext(MainContext);
+  const [temp, setTemp] = useState({});
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  
-
   useEffect(() => {
-    setTemp(data.product?.find(value => value.id == id))
+    setTemp(data.product?.find((value) => value.id == id));
   }, [data, id]);
   const [state, setState] = useState({
     number: "",
@@ -26,7 +23,6 @@ const Payment = () => {
     name: "",
     focused: "",
   });
-
   const [errors, setErrors] = useState({
     number: "",
     expiry: "",
@@ -34,14 +30,31 @@ const Payment = () => {
     name: "",
     email: "",
   });
-
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     if (name === "expiry") {
-      const [month, year] = value.split("/");
+      const newValue = value
+        .replace(/[^\d]/g, "")
+        .substring(0, 4)
+        .replace(/(\d{2})(\d{2})/, "\$1/\$2");
+      const [month, year] = newValue.split("/");
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear() % 100;
+      const enteredDate = new Date(`20${year}`, month - 1);
+      const expiryRegex = /^(0[1-9]|1[0-2])\/(2[3-9]|3[0-5])$/;
+  
+      if (!expiryRegex.test(newValue) || enteredDate < currentDate) {
+        setErrors((prev) => ({
+          ...prev,
+          expiry: "Please enter a valid expiry date",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, expiry: "" }));
+      }
+  
       setState((prev) => ({
         ...prev,
-        expiry: value,
+        expiry: newValue,
         month: month,
         year: year,
       }));
@@ -50,7 +63,10 @@ const Payment = () => {
       setState((prev) => ({ ...prev, [name]: value }));
       if (submitted) {
         if (!value || !/\S+@\S+\.\S+/.test(value)) {
-          setErrors((prev) => ({ ...prev, email: "Please enter a valid email" }));
+          setErrors((prev) => ({
+            ...prev,
+            email: "Please enter a valid email",
+          }));
         } else {
           setErrors((prev) => ({ ...prev, email: "" }));
         }
@@ -62,7 +78,10 @@ const Payment = () => {
       if (submitted) {
         setErrors((prev) => ({
           ...prev,
-          name: firstName && lastName ? "" : "Please enter both first and last name",
+          name:
+            firstName && lastName
+              ? ""
+              : "Please enter both first and last name",
         }));
       }
       setState((prev) => ({ ...prev, [name]: value }));
@@ -72,29 +91,28 @@ const Payment = () => {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
-
   const handleInputFocus = (evt) => {
     setState((prev) => ({ ...prev, focused: evt.target.name }));
   };
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
     const hasErrors = Object.values(errors).some((error) => error !== "");
-
     if (!state.email || !/\S+@\S+\.\S+/.test(state.email)) {
       setErrors((prev) => ({ ...prev, email: "Please enter a valid email" }));
       return;
-    }
-
-    if (hasErrors) {
+    } else if (hasErrors) {
       alert("Please fix the errors in the form");
       return;
     }
-
     setSubmitted(true);
-
+    console.log(form.current);
     emailjs
-      .sendForm("service_courses", "template_payment", form.current, "TSieCXYqsZ-oSOQi3" )
+      .sendForm(
+        "service_courses",
+        "template_payment",
+        form.current,
+        "TSieCXYqsZ-oSOQi3"
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -104,7 +122,6 @@ const Payment = () => {
         }
       );
   };
-
   return (
     <div id="credit-container">
       <div id="payment-header">
@@ -119,9 +136,7 @@ const Payment = () => {
         name={state.name}
         focused={state.focus}
       />
-      <form id="card-form" ref={form} onSubmit={handleSubmit}>
-        <br />
-        <br />
+      <form id="card-form" ref={form} onSubmit={sendEmail}>
         <input
           id="credit-card"
           type="tel"
@@ -132,19 +147,6 @@ const Payment = () => {
           value={state.number || ""}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
-        />
-        {errors.number && <div className="error">{errors.number}</div>}
-        <input
-          id="credit-owner"
-          type="text"
-          name="name"
-          placeholder="Name"
-          pattern="^[A-Za-z\s]+$"
-          maxLength="25"
-          value={state.name || ""}
-          onChange={handleInputChange}
-          onFocus={handleInputFocus}
-          className={errors.name ? "error" : ""}
         />
         {errors.name && <div className="error">{errors.name}</div>}
         <input
@@ -182,7 +184,6 @@ const Payment = () => {
           onFocus={handleInputFocus}
         />
         {errors.email && <div className="error">{errors.email}</div>}
-
         <Button
           id="payment-btn"
           type="submit"
@@ -191,20 +192,43 @@ const Payment = () => {
         >
           Submit payment
         </Button>
+        <input
+          type="text"
+          style={{ display: "none" }}
+          name="course"
+          defaultValue={temp?.course}
+        />
+        <input
+          type="text"
+          style={{ display: "none" }}
+          name="price"
+          defaultValue={temp?.price}
+        />
+        <input
+          type="text"
+          style={{ display: "none" }}
+          name="startDate"
+          defaultValue={temp?.["start-date"]}
+        />
+        <input
+          type="text"
+          style={{ display: "none" }}
+          name="endDate"
+          defaultValue={temp?.["end-date"]}
+        />
       </form>
-      {submitted && <p className="submitted">Form submitted successfully!</p>}
-      <br />
-      <div id="course-details">
-        <div id="course-checkout">
-          Chosen course: {temp?.course} <br />
-          Course starting date: {temp && temp['start-date']} <br />
-          Course starting date: {temp && temp['end-date']} <br />
+          {submitted && <p className="submitted">Form submitted successfully!</p>}
           <br />
+          <div id="course-details">
+            <div id="course-checkout">
+              Chosen course: {temp?.course} <br />
+              Course starting date: {temp && temp["start-date"]} <br />
+              Course ending date: {temp && temp["end-date"]} <br />
+              <br />
+            </div>
+            <div className="form-actions">Course price: {temp?.price}</div>
+          </div>
         </div>
-        <div className="form-actions">Course price: {temp?.price}</div>
-      </div>
-    </div>
-  );
-};
-
-export default Payment;
+      );
+    };
+    export default Payment;
