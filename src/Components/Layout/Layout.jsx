@@ -48,13 +48,12 @@ function Layout() {
                     <ContactUs />
                     <div id="footerLinks">
                         <div className="footerColumnLink">
+                            <div className="dummyLink" >Contact Us With:</div>
                             <a target='_blank' href="https://api.whatsapp.com/send?phone=972587545966&text=Please%20tell%20me%20about%20your%20coures">
                                 <div id='whatsapp' className='dummyLink'>Whatsapp</div>
                             </a>
-                            <div className="dummyLink">Products</div>
-                            <div className="dummyLink">FAQ</div>
-                            <div className="dummyLink">Privacy Policy</div>
-                            <div className="dummyLink">Terms and Conditions</div>
+                            <div className="dummyLink">Phone</div>
+                            <div className="dummyLink">Linkdin</div>
                         </div>
                         <div className="footerColumnLink">
                             <div className="dummyLink">Careers</div>

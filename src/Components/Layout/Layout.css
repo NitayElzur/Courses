@@ -106,8 +106,8 @@
 #footerLinks {
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    padding: 3vh;
+    justify-content: space-evenly;
+    padding: 3vh 0;
 }
 
 .footerColumnLink {
@@ -147,9 +147,5 @@
 
     #layoutFooter {
         padding: 2vh;
-    }
-
-    .footerColumnLink {
-        width: 25%;
     }
 }
