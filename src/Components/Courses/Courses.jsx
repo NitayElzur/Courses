@@ -24,7 +24,7 @@ function Courses() {
                     }
                 </div>
             </div>
-            <div className="courseText">Our Upcoming Courses:</div>
+            <div className="courseTextBottom">Our Upcoming Courses:</div>
             <div id="courseCalendar">
                 <Calendar />
             </div>

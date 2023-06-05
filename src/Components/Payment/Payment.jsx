@@ -36,13 +36,13 @@ const Payment = () => {
       const newValue = value
         .replace(/[^\d]/g, "")
         .substring(0, 4)
-        .replace(/(\d{2})(\d{2})/, "\$1/\$2");
+        .replace(/(\d{2})(\d{2})/, "$1/$2");
       const [month, year] = newValue.split("/");
       const currentDate = new Date();
       const currentYear = currentDate.getFullYear() % 100;
       const enteredDate = new Date(`20${year}`, month - 1);
       const expiryRegex = /^(0[1-9]|1[0-2])\/(2[2-9]|3[0-5])$/;
-  
+
       if (!expiryRegex.test(newValue) || enteredDate < currentDate) {
         setErrors((prev) => ({
           ...prev,
@@ -51,7 +51,7 @@ const Payment = () => {
       } else {
         setErrors((prev) => ({ ...prev, expiry: "" }));
       }
-  
+
       setState((prev) => ({
         ...prev,
         expiry: newValue,
@@ -133,7 +133,7 @@ const Payment = () => {
         expiry={state.expiry}
         cvc={state.cvc}
         name={state.name}
-        focused={state.focus}
+        focused={state.focused}
       />
       <form id="card-form" ref={form} onSubmit={sendEmail}>
         <input
@@ -149,28 +149,43 @@ const Payment = () => {
         />
         {errors.name && <div className="error">{errors.name}</div>}
         <input
-          id="credit-expiry"
+          id="credit-owner"
           type="text"
-          name="expiry"
-          placeholder="MM/YY"
-          maxLength="5"
-          value={state.expiry || ""}
+          name="name"
+          placeholder="name"
+          maxLength="30"
+          value={state.name || ""}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
-        {errors.expiry && <div className="error">{errors.expiry} </div>}
-        <input
-          id="credit-cvc"
-          type="text"
-          name="cvc"
-          placeholder="CVC"
-          pattern="\d{3}"
-          maxLength="3"
-          value={state.cvc || ""}
-          onChange={handleInputChange}
-          onFocus={handleInputFocus}
-        />
-        {errors.cvc && <div className="error">{errors.cvc}</div>}
+        {errors.name && <div className="error">{errors.name}</div>}
+        <div id="expiry-cvc">
+          <input
+            id="credit-cvc"
+            type="text"
+            name="cvc"
+            placeholder="cvc"
+            pattern="\d{3}"
+            maxLength="3"
+            value={state.cvc || ""}
+            onChange={handleInputChange}
+            onFocus={handleInputFocus}
+          />
+          {errors.cvc && <div className="error">{errors.cvc}</div>}
+          <div id="expiry">
+          <input
+            id="credit-expiry"
+            type="text"
+            name="expiry"
+            placeholder="MM/YY"
+            maxLength="5"
+            value={state.expiry || ""}
+            onChange={handleInputChange}
+            onFocus={handleInputFocus}
+          />
+          {errors.expiry && <div className="error">{errors.expiry} </div>}
+          </div>   
+          </div>
         <input
           id="email"
           type="email"
@@ -216,18 +231,18 @@ const Payment = () => {
           defaultValue={temp?.["end-date"]}
         />
       </form>
-          {submitted && <p className="submitted">Form submitted successfully!</p>}
+      {submitted && <p className="submitted">Payment submitted successfully!</p>}
+      <br />
+      <div id="course-details">
+        <div id="course-checkout">
+          Chosen course: {temp?.course} <br />
+          Course starting date: {temp && temp["start-date"]} <br />
+          Course ending date: {temp && temp["end-date"]} <br />
           <br />
-          <div id="course-details">
-            <div id="course-checkout">
-              Chosen course: {temp?.course} <br />
-              Course starting date: {temp && temp["start-date"]} <br />
-              Course ending date: {temp && temp["end-date"]} <br />
-              <br />
-            </div>
-            <div className="form-actions">Course price: {temp?.price}</div>
-          </div>
         </div>
-      );
-    };
-    export default Payment;
+        <div className="form-actions">Course price: {temp?.price}</div>
+      </div>
+    </div>
+  );
+};
+export default Payment;

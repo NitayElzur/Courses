@@ -1,11 +1,12 @@
 import "./ContactUs.css";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 
 function ContactUs() {
   const {register,formState: { errors },handleSubmit,reset} = useForm();
   const form = useRef();
+  const [submitted, setSubmitted] = useState(false);
   function onSubmit(formData){  
     emailjs.send('service_courses', 'template_course', formData, 'TSieCXYqsZ-oSOQi3')
       .then((result) => {
@@ -14,6 +15,7 @@ function ContactUs() {
         console.log(error.text);
       });
     form.current.reset();
+    setSubmitted(true);
   };
   return (
     <div id="contactMain">
@@ -57,6 +59,7 @@ function ContactUs() {
           Submit
         </button>
       </form>
+      {submitted && <p className="submit">Contact submitted successfully!</p>}
     </div>
   );
 }
