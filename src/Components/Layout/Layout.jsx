@@ -43,7 +43,6 @@ function Layout() {
             }
             <div id="layoutContent">
                 <Outlet />
-                <hr />
                 <div id="layoutFooter">
                     <ContactUs />
                     <div id="footerLinks">
