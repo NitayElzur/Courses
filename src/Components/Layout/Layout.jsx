@@ -10,7 +10,7 @@ function Layout() {
             <div id="layoutHeader">
                 <div id='layoutLogo'>
                     <Link to={'/'}>
-                        <img src="https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621615/High-Road/high_road_20230530205327_mjtd2m.png"/>
+                        <img src="https://res.cloudinary.com/dol6p0ex8/image/upload/v1685621615/High-Road/high_road_20230530205327_mjtd2m.png" />
                     </Link>
                 </div>
                 <div id='mobileLinks'>
@@ -30,13 +30,13 @@ function Layout() {
             </div>
             {isMenuOpen &&
                 <div id="divLinks">
-                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/'}>
+                    <Link className='headerLink' onClick={() => { setIsMenuOpen(false) }} to={'/'}>
                         Home
                     </Link>
-                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/courses'}>
+                    <Link className='headerLink' onClick={() => { setIsMenuOpen(false) }} to={'/courses'}>
                         Courses
                     </Link>
-                    <Link className='headerLink' onClick={() => {setIsMenuOpen(false)}} to={'/login'}>
+                    <Link className='headerLink' onClick={() => { setIsMenuOpen(false) }} to={'/login'}>
                         Login
                     </Link>
                 </div>
@@ -48,7 +48,9 @@ function Layout() {
                     <ContactUs />
                     <div id="footerLinks">
                         <div className="footerColumnLink">
-                            <div className="dummyLink">Services</div>
+                            <a target='_blank' href="https://api.whatsapp.com/send?phone=972587545966&text=Please%20tell%20me%20about%20your%20coures">
+                                <div id='whatsapp' className='dummyLink'>Whatsapp</div>
+                            </a>
                             <div className="dummyLink">Products</div>
                             <div className="dummyLink">FAQ</div>
                             <div className="dummyLink">Privacy Policy</div>
