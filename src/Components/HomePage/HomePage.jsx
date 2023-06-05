@@ -15,7 +15,7 @@ function HomePage() {
     return (
         <div id='homeMain'>
             <div id="homeBanner">
-                <span>Ignite Your Passion for Technology through Expert Training</span>
+                <span>Ignite Your Passion For Technology Through Expert Training</span>
             </div>
             <div className='homeBigText'>Our Proffesors:</div>
             <Carousel specialLength={true}>
